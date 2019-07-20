@@ -1,6 +1,9 @@
-## Encrypted Save Header
+In order to encrypt and decrypt a save file, you will need to use [this fork of smm2crypt](https://github.com/blawar/switch-save-work).
+You can use ```smm2crypt.exe -d``` to decrypt a file, and ```smm2crypt.exe -e``` to encrypt a file.
 
-Size 0x10. Found at the start of an encrypted save file.
+## Save Header
+
+Starts at 0x0, and has a size of 0x10.
 
 | Offset | Size | Description |
 |--------|------|-------------|
