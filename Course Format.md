@@ -17,7 +17,7 @@ Starts at 0x0, with a size of 0x200.
 | 0xE    | 0x1  | Custom Scroll Speed (0=x1, 1=x2, 2=x3) |
 | 0xF    | 0x1  | Clear Condition Type (1=Parts, 2=Status, 3=Actions) |
 | 0x10   | 0x4  | Clear Condition CRC32 |
-| 0x14   | 0x4  | Course Game Version Built (1=1.0.0, 2=1.0.1, 3=Unknown) |
+| 0x14   | 0x4  | Course Game Version Built (bit0=1.0.0, bit1=1.0.1. Both set if the course was created in 1.0.0, and then edited in 1.0.1) |
 | 0x18   | 0x4  | Management Flags (bit0=Always set, except for quest_105 and quest_115. bit1=Has completed course, bit4=Cant upload course, bit5=Has clear condition amount, bit6=Has chosen sub area orientation. bit2 and bit7 are unseen, bit3 is used only for Lesson and Quest courses) |
 | 0x1C   | 0x4  | Number of Clear Check Tries |
 | 0x20   | 0x4  | Clear Check Time |
