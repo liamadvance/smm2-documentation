@@ -10,7 +10,7 @@ Size 0x10. Found at the start of an encrypted save file.
 | 0x8    | 0x4  | CRC32 over decrypted file |
 | 0xC    | 0x4  | Magic "SCDL" if the file is a course, empty otherwise |
 
-There is a second save header at 0x
+In the case of save.dat, the CRC32 in the first save header is over 0x0-0xB90F, with a second save header at 0xB910 which has a CRC32 over 0xB920-0xBFBF.
 
 ## Encryption
 
