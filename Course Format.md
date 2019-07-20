@@ -1,6 +1,6 @@
 ## Course Header
 
-Size 0x200.
+Starts at 0x0, with a size of 0x200.
 
 | Offset | Size | Description |
 |--------|------|-------------|
@@ -26,6 +26,119 @@ Size 0x200.
 | 0x30   | 0x4  | Unknown Flag |
 | 0x34   | 0xBC | Padding |
 | 0xF0   | 0x1  | Unknown, usually FF |
-| 0xF1   | 0x3  | Game Type (M1, M3, MW, WU, 3W) |
+| 0xF1   | 0x3  | Game Style (M1, M3, MW, WU, 3W) |
 | 0xF4   | 0x42 | Course Name, 32 characters, null-terminated |
 | 0x136  | 0xCA | Course Description, 75 characters with space for 100, null-terminated |
+
+## Course Data
+
+Starts at 0x200, with a size of 0x48.
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | Course Theme (0=Ground, 1=Underground, 2=Castle, 3=Airship, 4=Underwater, 5=Ghost House, 6=Snow, 7=Desert, 8=Sky, 9=Forest) |
+| 0x1    | 0x1  | Scroll Type (0=None, 1=Slow, 2=Normal, 3=Fast, 4=Custom) |
+| 0x2    | 0x1  | Unknown |
+| 0x3    | 0x1  | Area Orientation (0=Horizontal, 1=Vertical) |
+| 0x4    | 0x1  | End Liquid Height |
+| 0x5    | 0x1  | Liquid Mode (0=Static, 1=Rising/Falling Only, 2=Rising and Falling) |
+| 0x6    | 0x1  | Liquid Speed (1=x1, 2=x2, 3=x3) |
+| 0x7    | 0x1  | Start Liquid Height |
+| 0x8    | 0x4  | Right Boundary |
+| 0xC    | 0x4  | Top Boundary |
+| 0x10   | 0x4  | Left Boundary |
+| 0x14   | 0x4  | Bottom Boundary |
+| 0x18   | 0x4  | Time (0=Day, 2=Night) |
+| 0x1C   | 0x4  | Object Count |
+| 0x20   | 0x4  | Sound Effect Count |
+| 0x24   | 0x4  | Snake Block Count |
+| 0x28   | 0x4  | Clear Pipe Count |
+| 0x2C   | 0x4  | Piranha Creeper Count |
+| 0x30   | 0x4  | Expanding Block Count |
+| 0x34   | 0x4  | Track Count |
+| 0x38   | 0x4  | Padding |
+| 0x3C   | 0x4  | Tile Count |
+| 0x40   | 0x4  | Rail Count |
+| 0x44   | 0x4  | Icicle Count |
+
+### Object Data
+
+Starts at 0x248, with a size of 0x20 * the amount of objects.
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x4  | X Position |
+| 0x4    | 0x4  | Y Position |
+| 0x8    | 0x2  | Padding |
+| 0xA    | 0x1  | Width |
+| 0xB    | 0x1  | Height |
+| 0xC    | 0x4  | Object Flags |
+| 0x10   | 0x4  | Child Object Flags |
+| 0x14   | 0x4  | Extended Data |
+| 0x18   | 0x2  | Object Type |
+| 0x1A   | 0x2  | Child Object Type |
+| 0x1C   | 0x2  | Link ID |
+| 0x1E   | 0x2  | Sound Effect ID |
+
+### Sound Effect Data
+
+Starts at 0x14548, with a size of 0x4 * the amount of sound effects.
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | Sound Effect ID |
+| 0x1    | 0x1  | X Position |
+| 0x2    | 0x1  | Y Position |
+| 0x3    | 0x1  | Padding |
+
+#### Sound Effect IDs
+
+| ID | Name |
+|----|------|
+| 0 | Shock |
+| 1 | Clatter |
+| 2 | Kick |
+| 3 | Applause |
+| 4 | Glory |
+| 5 | Punch |
+| 6 | Laughter |
+| 7 | Baby |
+| 8 | Ding Dong |
+| 9 | Boss Music |
+| 10 | Heartbeat |
+| 11 | Scream |
+| 12 | Drama! |
+| 13 | Jump |
+| 14 | Cheer |
+| 15 | Doom |
+| 16 | Fireworks |
+| 17 | Honk Honk |
+| 18 | Bzzt! |
+| 19 | Bonus Music |
+| 20 | Silence |
+| 23 | Party Popper |
+| 24 | Booo! |
+| 25 | Guffaw |
+| 26 | Near Miss |
+| 29 | Oink |
+| 30 | Kuh-thunk! |
+| 31 | Beep! |
+| 32 | Ninja Attack! |
+| 35 | Zap! |
+| 36 | Flash |
+| 37 | Yeah! |
+| 38 | Aww... |
+| 41 | Audience |
+| 42 | Scatting |
+| 43 | Spark |
+| 44 | Traditional |
+| 45 | Electric Guitar |
+| 46 | Twisty Turny |
+| 47 | Woozy |
+| 48 | Final Boss |
+| 49 | Peaceful |
+| 50 | Horror |
+| 51 | Super Mario Galaxy |
+| 52 | Super Mario 64 |
+| 53 | Super Mario Sunshine |
+| 54 | Super Mario Kart |
