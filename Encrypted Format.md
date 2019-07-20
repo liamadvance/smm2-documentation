@@ -1,4 +1,4 @@
-In order to encrypt and decrypt a save file, you will need to use [this fork of smm2crypt](https://github.com/blawar/switch-save-work).
+In order to encrypt and decrypt a save file, you will need to use [this fork of smm2crypt](https://github.com/blawar/switch-save-work/tree/master/smm2crypt).
 You can use ```smm2crypt.exe -d``` to decrypt a file, and ```smm2crypt.exe -e``` to encrypt a file.
 
 ## Save Header
