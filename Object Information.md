@@ -1,6 +1,6 @@
 ## Object Information
 
-| Id | Name | Category | Default Width | Default Height |
+| ID | Name | Category | Default Width | Default Height |
 |----|------|----------|---------------|----------------|
 | 0 | Goomba/Galoomba | Enemies | 1 | 1 |
 | 1 | Koopa Troopa | Enemies | 1 | 1 |
@@ -40,7 +40,7 @@
 | 35 | Super Star | Items | 1 | 1 |
 | 36 | Lava Lift | Gizmos | 5 | 1 |
 | 37 | Ground Start | None | ? | ? |
-| 38 | Start Sign | None | ? | ? |
+| 38 | Start Sign | None | 3 | 3 |
 | 39 | Kamek | Enemies | 1 | 1 |
 | 40 | Spike Top | Enemies | 1 | 1 |
 | 41 | Boo | Enemies | 1 | 1 |
@@ -61,7 +61,7 @@
 | 56 | Cheep Cheep | Enemies | 1 | 1 |
 | 57 | Muncher | Enemies | 1 | 1 |
 | 58 | Rocky Wrench | Enemies | 1 | 1 |
-| 59 | Rail | Gizmos | ? | ? |
+| 59 | Rail | Gizmos | 1/2 | 1/2 |
 | 60 | Lava Bubble | Enemies | 1 | 1 |
 | 61 | Chain Comp | Enemies | 1 | 1 |
 | 62 | Bowser/Meowser | Enemies | 2 (Bowser), 4 (Meowser) | 2 (Bowser), 3 (Meowser) |
@@ -71,11 +71,11 @@
 | 66 | Arrow Sign | Gizmos | 2 | 2 |
 | 67 | One-Way Wall | Gizmos | 2 | 2 |
 | 68 | Grinder | Gizmos | 3 | 3 |
-| 69 | Player | None | ? | ? |
+| 69 | Player | None | 1 | 1 |
 | 70 | 10-Coin | Items | 2 | 2 |
 | 71 | Semisolid Platform (3D World) | Terrain | 3 | 3 |
 | 72 | Koopa Troopa Car | Enemies | 2 | 2 |
-| 73 | Toad | None | ? | ? |
+| 73 | Toad | None | 1 | 1 |
 | 74 | None | None | 0 | 0 |
 | 75 | Stone | None | 1 | 1 |
 | 76 | Twister | Gizmos | 1 | 1 |
@@ -91,7 +91,7 @@
 | 86 | Charvaargh | Enemies | 4 | 4 |
 | 87 | Gentle Slope | Terrain | 4 | 2 |
 | 88 | Steep Slope | Terrain | 3 | 2 |
-| 89 | Custom Scroll Waypoint | None | ? | ? |
+| 89 | Custom Scroll Waypoint | None | 3 | 1 |
 | 90 | Checkpoint Flag | Gizmos | 2 | 2 |
 | 91 | Seesaw | Gizmos | 5 | 1 |
 | 92 | Pink Coin | Items | 1 | 1 |
@@ -117,7 +117,7 @@
 | 112 | Crate | Gizmos | 1 | 1 |
 | 113 | Mushroom Trampoline | Gizmos | 4 | 1 |
 | 114 | Porcupuffer | Enemies | 2 | 2 |
-| 115 | Goal Toadette | None | ? | ? |
+| 115 | Goal Toadette | None | 1 | 1 |
 | 116 | Super Hammer | Items | 1 | 1 |
 | 117 | Bully | Enemies | 2 | 2 |
 | 118 | Icicle | Gizmos | 1 | 2 |
