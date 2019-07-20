@@ -3,7 +3,7 @@ You can use ```smm2crypt.exe -d``` to decrypt a file, and ```smm2crypt.exe -e```
 
 ## Save Header
 
-Starts at 0x0, and has a size of 0x10.
+Starts at 0x0, with a size of 0x10.
 
 | Offset | Size | Description |
 |--------|------|-------------|
