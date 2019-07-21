@@ -111,7 +111,7 @@
 | 106 | Tree | Gizmos | 4 | 6 |
 | 107 | Piranha Creeper | Enemies | 2 | 2 |
 | 108 | Blinking Block | Gizmos | 1 | 1 |
-| 109 | Sound Effect Icon | None | ? | ? |
+| 109 | Sound Effect Icon | None | 1 | 1 |
 | 110 | Spike Block | Terrain | 2 | 2 |
 | 111 | None | None | 0 | 0 |
 | 112 | Crate | Gizmos | 1 | 1 |
