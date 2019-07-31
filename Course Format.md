@@ -55,10 +55,10 @@ Starts at 0x200, with a size of 0x48.
 | 0x28   | 0x4  | Clear Pipe Count |
 | 0x2C   | 0x4  | Piranha Creeper Count |
 | 0x30   | 0x4  | Expanding Block Count |
-| 0x34   | 0x4  | Track Count |
+| 0x34   | 0x4  | Track Block Count |
 | 0x38   | 0x4  | Padding |
 | 0x3C   | 0x4  | Tile Count |
-| 0x40   | 0x4  | Rail Count |
+| 0x40   | 0x4  | Track Count |
 | 0x44   | 0x4  | Icicle Count |
 
 ### Object Data
@@ -153,6 +153,23 @@ Starts at 0x247A4, with a size of 0x4 * the amount of tiles.
 | 0x1    | 0x1  | Y Position |
 | 0x2    | 0x1  | Tile ID |
 | 0x3    | 0x1  | Background Object ID (4=1x1, 8=1x2, 12=1x3, 16=3x1) |
+
+### Track Data
+
+Starts at 0x28824, with a size of 0xC * the amount of tracks.
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x2  | Padding |
+| 0x2    | 0x1  | Flags (1=Has Object) |
+| 0x3    | 0x1  | X Position |
+| 0x4    | 0x1  | Y Position |
+| 0x5    | 0x1  | Type (0=Regular, 8=3rd, 9=1st, 12=4th, 13=2nd) |
+| 0x6    | 0x2  | Index |
+| 0x8    | 0x1  | Left Value? |
+| 0x9    | 0x1  | Up Value? |
+| 0xA    | 0x1  | Right Value? |
+| 0xB    | 0x1  | Down Value? |
 
 ### Icicle Data
 
