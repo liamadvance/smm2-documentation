@@ -153,3 +153,14 @@ Starts at 0x247A4, with a size of 0x4 * the amount of tiles.
 | 0x1    | 0x1  | Y Position |
 | 0x2    | 0x1  | Tile ID |
 | 0x3    | 0x1  | Background Object ID (4=1x1, 8=1x2, 12=1x3, 16=3x1) |
+
+### Icicle Data
+
+Starts at 0x2CC74, with a size of 0x4 * the amount of icicles.
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | X Position |
+| 0x1    | 0x1  | Y Position |
+| 0x2    | 0x1  | Type (0=Regular Icicle, 1=Hard Icicle) |
+| 0x3    | 0x1  | Padding |
