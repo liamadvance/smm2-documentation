@@ -166,8 +166,8 @@ Starts at 0x28824, with a size of 0xC * the amount of tracks.
 | 0x4    | 0x1  | Y Position |
 | 0x5    | 0x1  | Type (0=Left/Right, 1=Up/Down, 8=3rd, 9=1st, 12=4th, 13=2nd) |
 | 0x6    | 0x2  | Index |
-| 0x8    | 0x2  | Unknown (Changes depending on the size of the track) |
-| 0xA    | 0x2  | Unknown (Always `04 01` if connected to a track, otherwise changes depending on the size of the track) |
+| 0x8    | 0x2  | Unknown (Changes depending on the size of the track, usually + 10 if the track is not looped) |
+| 0xA    | 0x2  | Unknown (Always `04 01` if connected to a track, otherwise changes depending on the size of the track, usually + 10 if the track is not looped) |
 
 ### Icicle Data
 
