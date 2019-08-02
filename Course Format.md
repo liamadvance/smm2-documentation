@@ -164,7 +164,7 @@ Starts at 0x28824, with a size of 0xC * the amount of tracks.
 | 0x2    | 0x1  | Flags (1=Has Object) |
 | 0x3    | 0x1  | X Position |
 | 0x4    | 0x1  | Y Position |
-| 0x5    | 0x1  | Type (0=Left/Right, 1=Up/Down, 8=3rd, 9=1st, 12=4th, 13=2nd) |
+| 0x5    | 0x1  | Type (0=Horizontal, 1=Vertical, 2=Diagonal, 4=Bottom Curved Diagonal, 5=Top Curved Diagonal, 8=3rd Type, 9=1st Type, 12=4th Type, 13=2nd Type) |
 | 0x6    | 0x2  | Index |
 | 0x8    | 0x2  | Unknown (Changes depending on the size of the track, usually + 10 if the track is not looped) |
 | 0xA    | 0x2  | Unknown (Always `04 01` if connected to a track, otherwise changes depending on the size of the track, usually + 10 if the track is not looped) |
