@@ -143,6 +143,27 @@ Starts at 0x14548, with a size of 0x4 * the amount of sound effects.
 | 53 | Super Mario Sunshine |
 | 54 | Super Mario Kart |
 
+### Snake Block Data
+
+Starts at 0x14BF8, with a size of 0x3C4 * the amount of snake blocks.
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | ID (Linked to Object Extended Data) |
+| 0x1    | 0x2  | Node Count |
+| 0x2    | 0x1  | Unknown (Always 1) |
+| 0x3    | 0x1  | Padding |
+| 0x4    | 0x8 * 120 | Snake Block Nodes |
+
+#### Snake Block Nodes
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x2  | Index |
+| 0x2    | 0x2  | Direction |
+| 0x4    | 0x2  | Unknown (Always 100) |
+| 0x6    | 0x2  | Padding |
+
 ### Tile Data
 
 Starts at 0x247A4, with a size of 0x4 * the amount of tiles.
