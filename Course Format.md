@@ -160,7 +160,7 @@ Starts at 0x14BF8, with a size of 0x3C4 * the amount of snake blocks.
 | Offset | Size | Description |
 |--------|------|-------------|
 | 0x0    | 0x2  | Index |
-| 0x2    | 0x2  | Direction |
+| 0x2    | 0x2  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
 | 0x4    | 0x2  | Unknown (Always 100) |
 | 0x6    | 0x2  | Padding |
 
