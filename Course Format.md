@@ -23,7 +23,7 @@ Starts at 0x0, with a size of 0x200.
 | 0x20   | 0x4  | Clear Check Time |
 | 0x24   | 0x4  | Creation ID |
 | 0x28   | 0x8  | Upload ID |
-| 0x30   | 0x4  | Completition Flags (1=Completed) |
+| 0x30   | 0x4  | Completion Flags (1=Completed) |
 | 0x34   | 0xBC | Padding |
 | 0xF0   | 0x1  | Unknown, usually FF |
 | 0xF1   | 0x3  | Game Style (M1, M3, MW, WU, 3W) |
