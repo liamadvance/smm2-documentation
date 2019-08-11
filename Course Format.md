@@ -18,12 +18,12 @@ Starts at 0x0, with a size of 0x200.
 | 0xF    | 0x1  | Clear Condition Type (1=Parts, 2=Status, 3=Actions) |
 | 0x10   | 0x4  | Clear Condition CRC32 |
 | 0x14   | 0x4  | Course Game Version Built (bit0=1.0.0, bit1=1.0.1. Both set if the course was created in 1.0.0, and then edited in 1.0.1) |
-| 0x18   | 0x4  | Management Flags (bit0=Always set, except for quest_105 and quest_115. bit1=Has completed course, bit4=Cant upload course, bit5=Has clear condition amount, bit6=Has chosen sub area orientation. bit2 and bit7 are unseen, bit3 is used only for Lesson and Quest courses) |
+| 0x18   | 0x4  | Management Flags (bit0=Needs to be set, but isn't for quest_105 and quest_115. bit1=Has passed clear check, bit4=Cant upload course, bit5=Has clear condition amount, bit6=Has chosen sub area orientation. bit2 and bit7 are unseen, bit3 is used only for Lesson and Quest courses) |
 | 0x1C   | 0x4  | Number of Clear Check Tries |
 | 0x20   | 0x4  | Clear Check Time |
 | 0x24   | 0x4  | Creation ID |
 | 0x28   | 0x8  | Upload ID |
-| 0x30   | 0x4  | Unknown Flag |
+| 0x30   | 0x4  | Completition Flags (1=Completed) |
 | 0x34   | 0xBC | Padding |
 | 0xF0   | 0x1  | Unknown, usually FF |
 | 0xF1   | 0x3  | Game Style (M1, M3, MW, WU, 3W) |
@@ -38,7 +38,7 @@ Starts at 0x200, with a size of 0x48.
 |--------|------|-------------|
 | 0x0    | 0x1  | Course Theme (0=Ground, 1=Underground, 2=Castle, 3=Airship, 4=Underwater, 5=Ghost House, 6=Snow, 7=Desert, 8=Sky, 9=Forest) |
 | 0x1    | 0x1  | Scroll Type (0=None, 1=Slow, 2=Normal, 3=Fast, 4=Custom) |
-| 0x2    | 0x1  | Unknown |
+| 0x2    | 0x1  | Screen Boundary Flags (0=Built Above Line, 1=Only Built Under Line) |
 | 0x3    | 0x1  | Area Orientation (0=Horizontal, 1=Vertical) |
 | 0x4    | 0x1  | End Liquid Height |
 | 0x5    | 0x1  | Liquid Mode (0=Static, 1=Rising/Falling Only, 2=Rising and Falling) |
