@@ -9,11 +9,11 @@ Starts at 0x0, with a size of 0x200.
 | 0x2    | 0x2  | Goal X Position |
 | 0x4    | 0x2  | Time Limit |
 | 0x6    | 0x2  | Clear Condition Amount |
-| 0x8    | 0x2  | Creation Year |
-| 0xA    | 0x1  | Creation Month |
-| 0xB    | 0x1  | Creation Day |
-| 0xC    | 0x1  | Creation Hour |
-| 0xD    | 0x1  | Creation Minute |
+| 0x8    | 0x2  | Last Saved Year |
+| 0xA    | 0x1  | Last Saved Month |
+| 0xB    | 0x1  | Last Saved Day |
+| 0xC    | 0x1  | Last Saved Hour |
+| 0xD    | 0x1  | Last Saved Minute |
 | 0xE    | 0x1  | Custom Scroll Speed (0=x1, 1=x2, 2=x3) |
 | 0xF    | 0x1  | Clear Condition Type (1=Parts, 2=Status, 3=Actions) |
 | 0x10   | 0x4  | Clear Condition CRC32 |
