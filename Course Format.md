@@ -14,8 +14,8 @@ Starts at 0x0, with a size of 0x200.
 | 0xB    | 0x1  | Last Saved Day |
 | 0xC    | 0x1  | Last Saved Hour |
 | 0xD    | 0x1  | Last Saved Minute |
-| 0xE    | 0x1  | Custom Scroll Speed (0=x1, 1=x2, 2=x3) |
-| 0xF    | 0x1  | Clear Condition Type (1=Parts, 2=Status, 3=Actions) |
+| 0xE    | 0x1  | Custom Autoscroll Speed (0=x1, 1=x2, 2=x3) |
+| 0xF    | 0x1  | Clear Condition Category (1=Parts, 2=Status, 3=Actions) |
 | 0x10   | 0x4  | Clear Condition CRC32 |
 | 0x14   | 0x4  | Course Game Version Built (bit0=1.0.0, bit1=1.0.1. Both set if the course was created in 1.0.0, and then edited in 1.0.1) |
 | 0x18   | 0x4  | Management Flags (bit0=Needs to be set, but isn't for quest_105 and quest_115. bit1=Has passed clear check, bit4=Cant upload course, bit5=Has clear condition amount, bit6=Has chosen sub area orientation. bit2 and bit7 are unseen, bit3 is used only for Lesson and Quest courses) |
@@ -36,8 +36,8 @@ Starts at 0x200, with a size of 0x48.
 
 | Offset | Size | Description |
 |--------|------|-------------|
-| 0x0    | 0x1  | Course Theme (0=Ground, 1=Underground, 2=Castle, 3=Airship, 4=Underwater, 5=Ghost House, 6=Snow, 7=Desert, 8=Sky, 9=Forest) |
-| 0x1    | 0x1  | Scroll Type (0=None, 1=Slow, 2=Normal, 3=Fast, 4=Custom) |
+| 0x0    | 0x1  | Area Theme (0=Ground, 1=Underground, 2=Castle, 3=Airship, 4=Underwater, 5=Ghost House, 6=Snow, 7=Desert, 8=Sky, 9=Forest) |
+| 0x1    | 0x1  | Autoscroll Type (0=None, 1=Slow, 2=Normal, 3=Fast, 4=Custom) |
 | 0x2    | 0x1  | Screen Boundary Flags (0=Built Above Line, 1=Only Built Under Line) |
 | 0x3    | 0x1  | Area Orientation (0=Horizontal, 1=Vertical) |
 | 0x4    | 0x1  | End Liquid Height |
@@ -149,7 +149,7 @@ Starts at 0x14BF8, with a size of 0x3C4 * the amount of snake blocks.
 
 | Offset | Size | Description |
 |--------|------|-------------|
-| 0x0    | 0x1  | ID (Linked to Object Extended Data) |
+| 0x0    | 0x1  | Link ID |
 | 0x1    | 0x2  | Node Count |
 | 0x2    | 0x1  | Unknown (Always 1) |
 | 0x3    | 0x1  | Padding |
@@ -163,6 +163,66 @@ Starts at 0x14BF8, with a size of 0x3C4 * the amount of snake blocks.
 | 0x2    | 0x2  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
 | 0x4    | 0x2  | Unknown (Always 100) |
 | 0x6    | 0x2  | Padding |
+
+### Piranha Creeper Data
+
+Starts at 0x242EC, with a size of 0x54 * the amount of piranha creepers.
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | Unknown (Always 1) |
+| 0x1    | 0x1  | Link ID |
+| 0x2    | 0x1  | Node Count |
+| 0x3    | 0x1  | Padding |
+| 0x4    | 0x4 * 20 | Piranha Creeper Nodes |
+
+#### Piranha Creeper Nodes
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | Unknown (Always 1) |
+| 0x1    | 0x1  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
+| 0x2    | 0x2  | Padding |
+
+### ! Block Data
+
+Starts at 0x24634, with a size of 0x2C * the amount of ! blocks.
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | Unknown (Always 1) |
+| 0x1    | 0x1  | Link ID |
+| 0x2    | 0x1  | Node Count |
+| 0x3    | 0x1  | Padding |
+| 0x4    | 0x4 * 10 | ! Block Nodes |
+
+#### ! Block Nodes
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | Unknown (Always 1) |
+| 0x1    | 0x1  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
+| 0x2    | 0x2  | Padding |
+
+### Track Block Data
+
+Starts at 0x247EC, with a size of 0x2C * the amount of track blocks.‬
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | Unknown (Always 1) |
+| 0x1    | 0x1  | Link ID |
+| 0x2    | 0x1  | Node Count |
+| 0x3    | 0x1  | Padding |
+| 0x4    | 0x4 * 10 | Track Block Nodes |
+
+#### Track Block Nodes
+
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | Unknown (Always 1) |
+| 0x1    | 0x1  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
+| 0x2    | 0x2  | Padding |
 
 ### Tile Data
 
