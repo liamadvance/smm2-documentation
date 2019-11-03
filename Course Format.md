@@ -48,7 +48,7 @@ Starts at 0x200, with a size of 0x48.
 | 0xC    | 0x4  | Top Boundary |
 | 0x10   | 0x4  | Left Boundary |
 | 0x14   | 0x4  | Bottom Boundary |
-| 0x18   | 0x4  | Time (0=Day, 2=Night) |
+| 0x18   | 0x4  | Area Flags (bit0=Related to Screen Lock?, bit1=Night Time) |
 | 0x1C   | 0x4  | Object Count |
 | 0x20   | 0x4  | Sound Effect Count |
 | 0x24   | 0x4  | Snake Block Count |
