@@ -18,7 +18,7 @@
 | 0x40000 | P-Door      |
 | 0x80000 | Key Door    |
 
-Door pair ID also seems to be flags?
+Door pair ID also seems to be flags? Each door has +0x100000 (default door with ID 0 has flags 0x6000040, ID 1 has flags 0x6100040, etc too ID 0x700000)
 
 ### [74] Spike/Spike Ball
 | Flag | Description |
