@@ -14,7 +14,7 @@
 | RailLinkOffsetX | Single | Unknown
 | RailLinkOffsetY | Single | Unknown
 | TouchAreaRate | Single | Unknown
-| ZposPriorityType | String | Unknown
+| ZposPriorityType | String | Type Of Entity
 | isCanChangeUnion? | String | Unknown
 | isCanContainOtoasobi? | String | Unknown
 | isCanEquipPara? | String | Variable That Dictates If You Can Link A Parachute To An Object/Enemy/Item/Block
