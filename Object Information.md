@@ -20,8 +20,8 @@
 | 15  | Bob-omb                                                 | Enemies  | 1                       | 1                       |
 | 16  | Semisolid Platform                                      | Terrain  | 3                       | 3                       |
 | 17  | Bridge                                                  | Terrain  | 3                       | 2                       |
-| 18  | P Switch                                                | Gizmos   | 1                       | 1                       |
-| 19  | POW Block                                               | Gizmos   | 1                       | 1                       |
+| 18  | P-Switch                                                | Gizmos   | 1                       | 1                       |
+| 19  | Pow Block                                               | Gizmos   | 1                       | 1                       |
 | 20  | Super Mushroom/Master Sword                             | Items    | 1                       | 1                       |
 | 21  | Donut Block                                             | Terrain  | 1                       | 1                       |
 | 22  | Cloud Block                                             | Terrain  | 1                       | 1                       |
@@ -101,7 +101,7 @@
 | 96  | Ant Trooper                                             | Enemies  | 1                       | 1                       |
 | 97  | Warp Box                                                | Gizmos   | 1                       | 1                       |
 | 98  | Bowser Jr.                                              | Enemies  | 1                       | 1                       |
-| 99  | ON/OFF Switch                                           | Gizmos   | 1                       | 1                       |
+| 99  | On/Off Switch                                           | Gizmos   | 1                       | 1                       |
 | 100 | Dotted-Line Block                                       | Gizmos   | 1                       | 1                       |
 | 101 | Lava Editor                                             | None     | ?                       | ?                       |
 | 102 | Monty Mole                                              | Enemies  | 1                       | 1                       |
