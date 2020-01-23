@@ -1,5 +1,4 @@
 ## Course Header
-
 Starts at 0x0, with a size of 0x200.
 
 | Offset | Size | Description                                                                                                                                                                                                                                                                           |
@@ -23,7 +22,7 @@ Starts at 0x0, with a size of 0x200.
 | 0x20   | 0x4  | Clear Check Time                                                                                                                                                                                                                                                                      |
 | 0x24   | 0x4  | Creation ID                                                                                                                                                                                                                                                                           |
 | 0x28   | 0x8  | Upload ID                                                                                                                                                                                                                                                                             |
-| 0x30   | 0x4  | Completion Flags (1=Completed)                                                                                                                                                                                                                                                        |
+| 0x30   | 0x4  | Course Flags (1=Completed, 2+=Unknown)                                                                                                                                                                                                                                                |
 | 0x34   | 0xBC | Padding                                                                                                                                                                                                                                                                               |
 | 0xF0   | 0x1  | Unknown, usually FF                                                                                                                                                                                                                                                                   |
 | 0xF1   | 0x3  | Game Style (M1, M3, MW, WU, 3W)                                                                                                                                                                                                                                                       |
@@ -31,8 +30,7 @@ Starts at 0x0, with a size of 0x200.
 | 0x136  | 0xCA | Course Description, 75 characters with space for 100, null-terminated                                                                                                                                                                                                                 |
 
 ## Course Data
-
-Starts at 0x200, with a size of 0x48.
+Starts at 0x200 (main area) and 0x2E0E0 (sub area), with a size of 0x48.
 
 | Offset | Size | Description                                                                                                               |
 |--------|------|---------------------------------------------------------------------------------------------------------------------------|
@@ -62,8 +60,7 @@ Starts at 0x200, with a size of 0x48.
 | 0x44   | 0x4  | Icicle Count                                                                                                              |
 
 ### Object Data
-
-Starts at 0x248, with a size of 0x20 * the amount of objects.
+Starts at 0x248 (main area) and 0x2E128 (sub area), with a size of 0x20 * the amount of objects.
 
 | Offset | Size | Description        |
 |--------|------|--------------------|
@@ -81,7 +78,6 @@ Starts at 0x248, with a size of 0x20 * the amount of objects.
 | 0x1E   | 0x2  | Sound Effect ID    |
 
 ### Sound Effect Data
-
 Starts at 0x14548, with a size of 0x4 * the amount of sound effects.
 
 | Offset | Size | Description     |
@@ -163,6 +159,10 @@ Starts at 0x14BF8, with a size of 0x3C4 * the amount of snake blocks.
 | 0x2    | 0x2  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
 | 0x4    | 0x2  | Unknown (Always 100)                                                                                                                                                                                                                    |
 | 0x6    | 0x2  | Padding                                                                                                                                                                                                                                 |
+
+### Clear Pipe Data
+
+Format is currently unknown.
 
 ### Piranha Creeper Data
 
