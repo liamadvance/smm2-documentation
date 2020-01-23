@@ -1,3 +1,12 @@
+## Course Structure
+This is the structure of the course file, which has a size of 0x5BFC0.
+
+| Offset  | Size    | Description             |
+|---------|---------|-------------------------|
+| 0x0     | 0x200   | Course Header           |
+| 0x200   | 0x2DEE0 | Course Data (Main Area) |
+| 0x2E0E0 | 0x2DEE0 | Course Data (Sub Area)  |
+
 ## Course Header
 Starts at 0x0, with a size of 0x200.
 
@@ -30,37 +39,48 @@ Starts at 0x0, with a size of 0x200.
 | 0x136  | 0xCA | Course Description, 75 characters with space for 100, null-terminated                                                                                                                                                                                                                 |
 
 ## Course Data
-Starts at 0x200 (main area) and 0x2E0E0 (sub area), with a size of 0x48.
+Each entry has a size of 0x48.
 
-| Offset | Size | Description                                                                                                               |
-|--------|------|---------------------------------------------------------------------------------------------------------------------------|
-| 0x0    | 0x1  | Area Theme (0=Ground, 1=Underground, 2=Castle, 3=Airship, 4=Underwater, 5=Ghost House, 6=Snow, 7=Desert, 8=Sky, 9=Forest) |
-| 0x1    | 0x1  | Autoscroll Type (0=None, 1=Slow, 2=Normal, 3=Fast, 4=Custom)                                                              |
-| 0x2    | 0x1  | Screen Boundary Flags (0=Built Above Line, 1=Only Built Under Line)                                                       |
-| 0x3    | 0x1  | Area Orientation (0=Horizontal, 1=Vertical)                                                                               |
-| 0x4    | 0x1  | End Liquid Height                                                                                                         |
-| 0x5    | 0x1  | Liquid Mode (0=Static, 1=Rising/Falling Only, 2=Rising and Falling)                                                       |
-| 0x6    | 0x1  | Liquid Speed (1=x1, 2=x2, 3=x3)                                                                                           |
-| 0x7    | 0x1  | Start Liquid Height                                                                                                       |
-| 0x8    | 0x4  | Right Boundary                                                                                                            |
-| 0xC    | 0x4  | Top Boundary                                                                                                              |
-| 0x10   | 0x4  | Left Boundary                                                                                                             |
-| 0x14   | 0x4  | Bottom Boundary                                                                                                           |
-| 0x18   | 0x4  | Area Flags (bit0=Related to Screen Lock?, bit1=Night Time)                                                                |
-| 0x1C   | 0x4  | Object Count                                                                                                              |
-| 0x20   | 0x4  | Sound Effect Count                                                                                                        |
-| 0x24   | 0x4  | Snake Block Count                                                                                                         |
-| 0x28   | 0x4  | Clear Pipe Count                                                                                                          |
-| 0x2C   | 0x4  | Piranha Creeper Count                                                                                                     |
-| 0x30   | 0x4  | ! Block Count                                                                                                             |
-| 0x34   | 0x4  | Track Block Count                                                                                                         |
-| 0x38   | 0x4  | Padding                                                                                                                   |
-| 0x3C   | 0x4  | Tile Count                                                                                                                |
-| 0x40   | 0x4  | Track Count                                                                                                               |
-| 0x44   | 0x4  | Icicle Count                                                                                                              |
+| Offset  | Size        | Description                                                                                                               |
+|---------|-------------|---------------------------------------------------------------------------------------------------------------------------|
+| 0x0     | 0x1         | Area Theme (0=Ground, 1=Underground, 2=Castle, 3=Airship, 4=Underwater, 5=Ghost House, 6=Snow, 7=Desert, 8=Sky, 9=Forest) |
+| 0x1     | 0x1         | Autoscroll Type (0=None, 1=Slow, 2=Normal, 3=Fast, 4=Custom)                                                              |
+| 0x2     | 0x1         | Screen Boundary Flags (0=Built Above Line, 1=Only Built Under Line)                                                       |
+| 0x3     | 0x1         | Area Orientation (0=Horizontal, 1=Vertical)                                                                               |
+| 0x4     | 0x1         | End Liquid Height                                                                                                         |
+| 0x5     | 0x1         | Liquid Mode (0=Static, 1=Rising/Falling Only, 2=Rising and Falling)                                                       |
+| 0x6     | 0x1         | Liquid Speed (1=x1, 2=x2, 3=x3)                                                                                           |
+| 0x7     | 0x1         | Start Liquid Height                                                                                                       |
+| 0x8     | 0x4         | Right Boundary                                                                                                            |
+| 0xC     | 0x4         | Top Boundary                                                                                                              |
+| 0x10    | 0x4         | Left Boundary                                                                                                             |
+| 0x14    | 0x4         | Bottom Boundary                                                                                                           |
+| 0x18    | 0x4         | Area Flags (bit0=Related to Screen Lock?, bit1=Night Time)                                                                |
+| 0x1C    | 0x4         | Object Count                                                                                                              |
+| 0x20    | 0x4         | Sound Effect Count                                                                                                        |
+| 0x24    | 0x4         | Snake Block Count                                                                                                         |
+| 0x28    | 0x4         | Clear Pipe Count                                                                                                          |
+| 0x2C    | 0x4         | Piranha Creeper Count                                                                                                     |
+| 0x30    | 0x4         | ! Block Count                                                                                                             |
+| 0x34    | 0x4         | Track Block Count                                                                                                         |
+| 0x38    | 0x4         | Padding                                                                                                                   |
+| 0x3C    | 0x4         | Tile Count                                                                                                                |
+| 0x40    | 0x4         | Track Count                                                                                                               |
+| 0x44    | 0x4         | Icicle Count                                                                                                              |
+| 0x48    | 0x20 * 2600 | Object Data                                                                                                               |
+| 0x14584 | 0x4 * 300   | Sound Effect Data                                                                                                         |
+| 0x149F8 | 0x3C4 * 5   | Snake Block Data                                                                                                          |
+| 0x15CCC | 0x124 * 200 | Clear Pipe Data                                                                                                           |
+| 0x240EC | 0x54 * 10   | Piranha Creeper Data                                                                                                      |
+| 0x24434 | 0x2C * 10   | ! Block Data                                                                                                              |
+| 0x245EC | 0x2C * 10   | Track Block Data                                                                                                          |
+| 0x247A4 | 0x4 * 4000  | Tile Data                                                                                                                 |
+| 0x28624 | 0xC * 1500  | Track Data                                                                                                                |
+| 0x2CC74 | 0x4 * 300   | Icicle Data                                                                                                               |
+| 0x2D124 | 0xDBC       | Padding                                                                                                                   |
 
 ### Object Data
-Starts at 0x248 (main area) and 0x2E128 (sub area), with a size of 0x20 * the amount of objects.
+Each entry has a size of 0x20 * the amount of objects.
 
 | Offset | Size | Description        |
 |--------|------|--------------------|
@@ -78,7 +98,7 @@ Starts at 0x248 (main area) and 0x2E128 (sub area), with a size of 0x20 * the am
 | 0x1E   | 0x2  | Sound Effect ID    |
 
 ### Sound Effect Data
-Starts at 0x14548, with a size of 0x4 * the amount of sound effects.
+Each entry has a size of 0x4 * the amount of sound effects.
 
 | Offset | Size | Description     |
 |--------|------|-----------------|
@@ -88,7 +108,6 @@ Starts at 0x14548, with a size of 0x4 * the amount of sound effects.
 | 0x3    | 0x1  | Padding         |
 
 #### Sound Effect IDs
-
 | ID | Name                 |
 |----|----------------------|
 | 0  | Shock                |
@@ -140,8 +159,7 @@ Starts at 0x14548, with a size of 0x4 * the amount of sound effects.
 | 54 | Super Mario Kart     |
 
 ### Snake Block Data
-
-Starts at 0x14BF8, with a size of 0x3C4 * the amount of snake blocks.
+Each entry has a size of 0x3C4 * the amount of snake blocks.
 
 | Offset | Size      | Description        |
 |--------|-----------|--------------------|
@@ -152,6 +170,7 @@ Starts at 0x14BF8, with a size of 0x3C4 * the amount of snake blocks.
 | 0x4    | 0x8 * 120 | Snake Block Nodes  |
 
 #### Snake Block Nodes
+Each entry  has a size of 0x8 * the amount of snake block nodes.
 
 | Offset | Size | Description                                                                                                                                                                                                                             |
 |--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -161,12 +180,32 @@ Starts at 0x14BF8, with a size of 0x3C4 * the amount of snake blocks.
 | 0x6    | 0x2  | Padding                                                                                                                                                                                                                                 |
 
 ### Clear Pipe Data
+Each entry has a size of 0x4 * the amount of clear pipes.
 
-Format is currently unknown.
+| Offset | Size     | Description        |
+|--------|----------|--------------------|
+| 0x0    | 0x1      | Link ID            |
+| 0x1    | 0x1      | Node Count         |
+| 0x2    | 0x1      | Unknown (Always 1) |
+| 0x3    | 0x1      | Padding            |
+| 0x4    | 0x8 * 36 | Clear Pipe Nodes   |
+
+#### Clear Pipe Nodes
+Each entry has a size of 0x8 * the amount of clear pipe nodes.
+
+| Offset | Size     | Description            |
+|--------|----------|------------------------|
+| 0x0    | 0x1      | Unknown (Direction?)   |
+| 0x1    | 0x1      | Index                  |
+| 0x2    | 0x1      | Unknown (Position?)    |
+| 0x3    | 0x1      | Unknown (Position?)    |
+| 0x4    | 0x1      | Unknown (Always 2)     |
+| 0x5    | 0x1      | Unknown                |
+| 0x6    | 0x1      | Unknown (Always 1)     |
+| 0x7    | 0x1      | Unknown (Seen 0/1/2/3) |
 
 ### Piranha Creeper Data
-
-Starts at 0x242EC, with a size of 0x54 * the amount of piranha creepers.
+Each entry has a size of 0x54 * the amount of piranha creepers.
 
 | Offset | Size     | Description           |
 |--------|----------|-----------------------|
@@ -177,6 +216,7 @@ Starts at 0x242EC, with a size of 0x54 * the amount of piranha creepers.
 | 0x4    | 0x4 * 20 | Piranha Creeper Nodes |
 
 #### Piranha Creeper Nodes
+Each entry has a size of 0x4 * the amount of piranha creeper nodes.
 
 | Offset | Size | Description                                                                                                                                                                                                                             |
 |--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -185,8 +225,7 @@ Starts at 0x242EC, with a size of 0x54 * the amount of piranha creepers.
 | 0x2    | 0x2  | Padding                                                                                                                                                                                                                                 |
 
 ### ! Block Data
-
-Starts at 0x24634, with a size of 0x2C * the amount of ! blocks.
+Each entry has a size of 0x2C * the amount of ! blocks.
 
 | Offset | Size     | Description        |
 |--------|----------|--------------------|
@@ -197,6 +236,7 @@ Starts at 0x24634, with a size of 0x2C * the amount of ! blocks.
 | 0x4    | 0x4 * 10 | ! Block Nodes      |
 
 #### ! Block Nodes
+Each entry has a size of 0x4 * the amount of ! block nodes.
 
 | Offset | Size | Description                                                                                                                                                                                                                             |
 |--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -205,8 +245,7 @@ Starts at 0x24634, with a size of 0x2C * the amount of ! blocks.
 | 0x2    | 0x2  | Padding                                                                                                                                                                                                                                 |
 
 ### Track Block Data
-
-Starts at 0x247EC, with a size of 0x2C * the amount of track blocks.‬
+Each entry has a size of 0x2C * the amount of track blocks.‬
 
 | Offset | Size     | Description        |
 |--------|----------|--------------------|
@@ -217,6 +256,7 @@ Starts at 0x247EC, with a size of 0x2C * the amount of track blocks.‬
 | 0x4    | 0x4 * 10 | Track Block Nodes  |
 
 #### Track Block Nodes
+Each entry has a size of 0x4 * the amount of track block nodes.
 
 | Offset | Size | Description                                                                                                                                                                                                                             |
 |--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -225,8 +265,7 @@ Starts at 0x247EC, with a size of 0x2C * the amount of track blocks.‬
 | 0x2    | 0x2  | Padding                                                                                                                                                                                                                                 |
 
 ### Tile Data
-
-Starts at 0x247A4, with a size of 0x4 * the amount of tiles.
+Each entry has a size of 0x4 * the amount of tiles.
 
 | Offset | Size | Description                                         |
 |--------|------|-----------------------------------------------------|
@@ -236,8 +275,7 @@ Starts at 0x247A4, with a size of 0x4 * the amount of tiles.
 | 0x3    | 0x1  | Background Object ID (4=1x1, 8=1x2, 12=1x3, 16=3x1) |
 
 ### Track Data
-
-Starts at 0x28824, with a size of 0xC * the amount of tracks.
+Each entry has a size of 0xC * the amount of tracks.
 
 | Offset | Size | Description                                                                                                                                                                                                                                                                                                                                        |
 |--------|------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -251,12 +289,11 @@ Starts at 0x28824, with a size of 0xC * the amount of tracks.
 | 0xA    | 0x2  | Unknown (Always `04 01` if connected to a track, otherwise changes depending on the size of the track, usually + 10 if the track is not looped)                                                                                                                                                                                                    |
 
 ### Icicle Data
+Each entry has a size of 0x4 * the amount of icicles.
 
-Starts at 0x2CC74, with a size of 0x4 * the amount of icicles.
-
-| Offset | Size | Description                            |
-|--------|------|----------------------------------------|
-| 0x0    | 0x1  | X Position                             |
-| 0x1    | 0x1  | Y Position                             |
-| 0x2    | 0x1  | Type (0=Regular Icicle, 1=Hard Icicle) |
-| 0x3    | 0x1  | Padding                                |
+| Offset | Size | Description               |
+|--------|------|---------------------------|
+| 0x0    | 0x1  | X Position                |
+| 0x1    | 0x1  | Y Position                |
+| 0x2    | 0x1  | Type (0=Falling, 1=Solid) |
+| 0x3    | 0x1  | Padding                   |
