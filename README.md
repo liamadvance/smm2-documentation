@@ -11,3 +11,4 @@ Information about file formats and other data for Super Mario Maker 2.
 - simontime for his original course decryptor.
 - blawar for his work on MMLINX and the level repository.
 - Treeki and switchjs for help with documenting course file format information.
+- Mario Possamato for documenting enemy/edit database file format information.
