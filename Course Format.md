@@ -1,4 +1,5 @@
 ## Course Structure
+
 This is the structure of the course file, which has a size of 0x5BFC0.
 
 | Offset  | Size    | Description             |
@@ -8,37 +9,62 @@ This is the structure of the course file, which has a size of 0x5BFC0.
 | 0x2E0E0 | 0x2DEE0 | Course Data (Sub Area)  |
 
 ## Course Header
+
 Starts at 0x0, with a size of 0x200.
 
-| Offset | Size | Description                                                                                                                                                                                                                                                                           |
-|--------|------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x0    | 0x1  | Start Y Position                                                                                                                                                                                                                                                                      |
-| 0x1    | 0x1  | Goal Y Position                                                                                                                                                                                                                                                                       |
-| 0x2    | 0x2  | Goal X Position                                                                                                                                                                                                                                                                       |
-| 0x4    | 0x2  | Time Limit                                                                                                                                                                                                                                                                            |
-| 0x6    | 0x2  | Clear Condition Amount                                                                                                                                                                                                                                                                |
-| 0x8    | 0x2  | Last Saved Year                                                                                                                                                                                                                                                                       |
-| 0xA    | 0x1  | Last Saved Month                                                                                                                                                                                                                                                                      |
-| 0xB    | 0x1  | Last Saved Day                                                                                                                                                                                                                                                                        |
-| 0xC    | 0x1  | Last Saved Hour                                                                                                                                                                                                                                                                       |
-| 0xD    | 0x1  | Last Saved Minute                                                                                                                                                                                                                                                                     |
-| 0xE    | 0x1  | Custom Autoscroll Speed (0=x1, 1=x2, 2=x3)                                                                                                                                                                                                                                            |
-| 0xF    | 0x1  | Clear Condition Category (1=Parts, 2=Status, 3=Actions)                                                                                                                                                                                                                               |
-| 0x10   | 0x4  | Clear Condition CRC32                                                                                                                                                                                                                                                                 |
-| 0x14   | 0x4  | Course Game Version Built (bit0=1.0.0, bit1=1.0.1. Both set if the course was created in 1.0.0, and then edited in 1.0.1)                                                                                                                                                             |
-| 0x18   | 0x4  | Management Flags (bit0=Needs to be set, but isn't for quest_105 and quest_115. bit1=Has passed clear check, bit4=Cant upload course, bit5=Has clear condition amount, bit6=Has chosen sub area orientation. bit2 and bit7 are unseen, bit3 is used only for Lesson and Quest courses) |
-| 0x1C   | 0x4  | Number of Clear Check Tries                                                                                                                                                                                                                                                           |
-| 0x20   | 0x4  | Clear Check Time                                                                                                                                                                                                                                                                      |
-| 0x24   | 0x4  | Creation ID                                                                                                                                                                                                                                                                           |
-| 0x28   | 0x8  | Upload ID                                                                                                                                                                                                                                                                             |
-| 0x30   | 0x4  | Course Flags (1=Completed, 2+=Unknown)                                                                                                                                                                                                                                                |
-| 0x34   | 0xBC | Padding                                                                                                                                                                                                                                                                               |
-| 0xF0   | 0x1  | Unknown, usually FF                                                                                                                                                                                                                                                                   |
-| 0xF1   | 0x3  | Game Style (M1, M3, MW, WU, 3W)                                                                                                                                                                                                                                                       |
-| 0xF4   | 0x42 | Course Name, 32 characters, null-terminated                                                                                                                                                                                                                                           |
-| 0x136  | 0xCA | Course Description, 75 characters with space for 100, null-terminated                                                                                                                                                                                                                 |
+| Offset | Size | Description                                                             |
+|--------|------|-------------------------------------------------------------------------|
+| 0x0    | 0x1  | Start Y Position                                                        |
+| 0x1    | 0x1  | Goal Y Position                                                         |
+| 0x2    | 0x2  | Goal X Position                                                         |
+| 0x4    | 0x2  | Time Limit                                                              |
+| 0x6    | 0x2  | Clear Condition Amount                                                  |
+| 0x8    | 0x2  | Last Saved Year                                                         |
+| 0xA    | 0x1  | Last Saved Month                                                        |
+| 0xB    | 0x1  | Last Saved Day                                                          |
+| 0xC    | 0x1  | Last Saved Hour                                                         |
+| 0xD    | 0x1  | Last Saved Minute                                                       |
+| 0xE    | 0x1  | Custom Autoscroll Speed (0=x1, 1=x2, 2=x3)                              |
+| 0xF    | 0x1  | Clear Condition Category (1=Parts, 2=Status, 3=Actions)                 |
+| 0x10   | 0x4  | Clear Condition CRC32                                                   |
+| 0x14   | 0x4  | [Game Versions](#Game%20Version) create and edit bits. Multiple bits are set, if the course was created and/or edited in multiple versions. |
+| 0x18   | 0x4  | [Management Flags](#Management%20Flags)                                 |
+| 0x1C   | 0x4  | Number of Clear Check Tries                                             |
+| 0x20   | 0x4  | Clear Check Time                                                        |
+| 0x24   | 0x4  | Creation ID                                                             |
+| 0x28   | 0x8  | Upload ID                                                               |
+| 0x30   | 0x4  | [Game Version](#Game%20Version) uint in which course has been completed |
+| 0x34   | 0xBC | Padding                                                                 |
+| 0xF0   | 0x1  | Unknown, usually FF                                                     |
+| 0xF1   | 0x3  | Game Style (M1, M3, MW, WU, 3W)                                         |
+| 0xF4   | 0x42 | Course Name, 32 characters, null-terminated                             |
+| 0x136  | 0xCA | Course Description, 75 characters with space for 100, null-terminated   |
+
+### Game Version
+
+| Value | Version |
+|-------|---------|
+| 0     | 1.0.0   |
+| 1     | 1.0.1   |
+| 2     | 1.1.0   |
+| 3     | 2.0.0   |
+| 4     | 3.0.0   |
+
+### Management Flags
+
+| Bit | Description                                            |
+|-----|--------------------------------------------------------|
+| 0   | Needs to be set, but isn't for quest_105 and quest_115 |
+| 1   | Has passed clear check                                 |
+| 2   | Unknown                                                |
+| 3   | Used only for Lesson and Quest courses                 |
+| 4   | Can't upload course                                    |
+| 5   | Has clear condition amount                             |
+| 6   | Has chosen sub area orientation                        |
+| 7   | Unknown                                                |
 
 ## Course Data
+
 Each entry has a size of 0x48.
 
 | Offset  | Size        | Description                                                                                                               |
@@ -80,6 +106,7 @@ Each entry has a size of 0x48.
 | 0x2D124 | 0xDBC       | Padding                                                                                                                   |
 
 ### Object Data
+
 Each entry has a size of 0x20 * the amount of objects.
 
 | Offset | Size | Description        |
@@ -98,6 +125,7 @@ Each entry has a size of 0x20 * the amount of objects.
 | 0x1E   | 0x2  | Sound Effect ID    |
 
 ### Sound Effect Data
+
 Each entry has a size of 0x4 * the amount of sound effects.
 
 | Offset | Size | Description     |
@@ -108,6 +136,7 @@ Each entry has a size of 0x4 * the amount of sound effects.
 | 0x3    | 0x1  | Padding         |
 
 #### Sound Effect IDs
+
 | ID | Name                 |
 |----|----------------------|
 | 0  | Shock                |
@@ -159,6 +188,7 @@ Each entry has a size of 0x4 * the amount of sound effects.
 | 54 | Super Mario Kart     |
 
 ### Snake Block Data
+
 Each entry has a size of 0x3C4 * the amount of snake blocks.
 
 | Offset | Size      | Description        |
@@ -170,6 +200,7 @@ Each entry has a size of 0x3C4 * the amount of snake blocks.
 | 0x4    | 0x8 * 120 | Snake Block Nodes  |
 
 #### Snake Block Nodes
+
 Each entry  has a size of 0x8 * the amount of snake block nodes.
 
 | Offset | Size | Description                                                                                                                                                                                                                             |
@@ -180,6 +211,7 @@ Each entry  has a size of 0x8 * the amount of snake block nodes.
 | 0x6    | 0x2  | Padding                                                                                                                                                                                                                                 |
 
 ### Clear Pipe Data
+
 Each entry has a size of 0x4 * the amount of clear pipes.
 
 | Offset | Size     | Description        |
@@ -191,6 +223,7 @@ Each entry has a size of 0x4 * the amount of clear pipes.
 | 0x4    | 0x8 * 36 | Clear Pipe Nodes   |
 
 #### Clear Pipe Nodes
+
 Each entry has a size of 0x8 * the amount of clear pipe nodes.
 
 | Offset | Size     | Description            |
@@ -205,6 +238,7 @@ Each entry has a size of 0x8 * the amount of clear pipe nodes.
 | 0x7    | 0x1      | Unknown (Seen 0/1/2/3) |
 
 ### Piranha Creeper Data
+
 Each entry has a size of 0x54 * the amount of piranha creepers.
 
 | Offset | Size     | Description           |
@@ -216,6 +250,7 @@ Each entry has a size of 0x54 * the amount of piranha creepers.
 | 0x4    | 0x4 * 20 | Piranha Creeper Nodes |
 
 #### Piranha Creeper Nodes
+
 Each entry has a size of 0x4 * the amount of piranha creeper nodes.
 
 | Offset | Size | Description                                                                                                                                                                                                                             |
@@ -225,6 +260,7 @@ Each entry has a size of 0x4 * the amount of piranha creeper nodes.
 | 0x2    | 0x2  | Padding                                                                                                                                                                                                                                 |
 
 ### ! Block Data
+
 Each entry has a size of 0x2C * the amount of ! blocks.
 
 | Offset | Size     | Description        |
@@ -236,6 +272,7 @@ Each entry has a size of 0x2C * the amount of ! blocks.
 | 0x4    | 0x4 * 10 | ! Block Nodes      |
 
 #### ! Block Nodes
+
 Each entry has a size of 0x4 * the amount of ! block nodes.
 
 | Offset | Size | Description                                                                                                                                                                                                                             |
@@ -245,6 +282,7 @@ Each entry has a size of 0x4 * the amount of ! block nodes.
 | 0x2    | 0x2  | Padding                                                                                                                                                                                                                                 |
 
 ### Track Block Data
+
 Each entry has a size of 0x2C * the amount of track blocks.‬
 
 | Offset | Size     | Description        |
@@ -256,6 +294,7 @@ Each entry has a size of 0x2C * the amount of track blocks.‬
 | 0x4    | 0x4 * 10 | Track Block Nodes  |
 
 #### Track Block Nodes
+
 Each entry has a size of 0x4 * the amount of track block nodes.
 
 | Offset | Size | Description                                                                                                                                                                                                                             |
@@ -265,6 +304,7 @@ Each entry has a size of 0x4 * the amount of track block nodes.
 | 0x2    | 0x2  | Padding                                                                                                                                                                                                                                 |
 
 ### Tile Data
+
 Each entry has a size of 0x4 * the amount of tiles.
 
 | Offset | Size | Description                                         |
@@ -275,6 +315,7 @@ Each entry has a size of 0x4 * the amount of tiles.
 | 0x3    | 0x1  | Background Object ID (4=1x1, 8=1x2, 12=1x3, 16=3x1) |
 
 ### Track Data
+
 Each entry has a size of 0xC * the amount of tracks.
 
 | Offset | Size | Description                                                                                                                                                                                                                                                                                                                                        |
@@ -289,6 +330,7 @@ Each entry has a size of 0xC * the amount of tracks.
 | 0xA    | 0x2  | Unknown (Always `04 01` if connected to a track, otherwise changes depending on the size of the track, usually + 10 if the track is not looped)                                                                                                                                                                                                    |
 
 ### Icicle Data
+
 Each entry has a size of 0x4 * the amount of icicles.
 
 | Offset | Size | Description               |
