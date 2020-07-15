@@ -13,3 +13,4 @@
 | GulpDown
 | SpitOut
 | CapBound
+| Fire
