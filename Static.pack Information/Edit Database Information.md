@@ -5,8 +5,8 @@
 | AttrNum | Int32 | Unknown
 | BaseUnitSizeX | Single | Variable That Dictates An Object/Enemy/Item/Block's Base Unit Size X
 | BaseUnitSizeY | Single | Variable That Dictates An Object/Enemy/Item/Block's Base Unit Size Y
-| DrawOffsetX | Single | Unknown
-| DrawOffsetY | Single | Unknown
+| DrawOffsetX | Single | The Offset Of Where An Object/Enemy/Item/Block Is In Relation To Where It's Placed
+| DrawOffsetY | Single | The Offset Of Where An Object/Enemy/Item/Block Is In Relation To The Foreground
 | JugemCloudRideOffset | Single | Unknown
 | KoopaClownRideOffset | Single | Unknown
 | ModelUnitSizeY | Single | Unknown
@@ -14,7 +14,7 @@
 | RailLinkOffsetX | Single | Unknown
 | RailLinkOffsetY | Single | Unknown
 | TouchAreaRate | Single | Unknown
-| ZposPriorityType | String | Unknown
+| ZposPriorityType | String | Type Of Entity
 | isCanChangeUnion? | String | Unknown
 | isCanContainOtoasobi? | String | Unknown
 | isCanEquipPara? | String | Variable That Dictates If You Can Link A Parachute To An Object/Enemy/Item/Block
