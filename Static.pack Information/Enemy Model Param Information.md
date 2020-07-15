@@ -48,5 +48,5 @@ Example, M1_Enemy_kuribo.byml:
   </BymlRoot>
 </Root>
 ```  
-```Cloud: 0x1b7484e8, default=1.0 x 1 (1.0 multiplied by the size of a normal Cloud.)```  
-```Clown Car: 0x543aade0, default=1.0 x 2 (1.0 multiplied by the size of a normal Clown Car.)```
+```Cloud size: 0x1b7484e8, default=1.0 x 1 (1.0 multiplied by the size of a normal Cloud.)```  
+```Clown Car size: 0x543aade0, default=1.0 x 2 (1.0 multiplied by the size of a normal Clown Car.)```
