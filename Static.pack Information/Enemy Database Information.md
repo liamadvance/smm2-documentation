@@ -25,7 +25,7 @@
 | jumpstep_speed_wing | Single | Variable That Dictates An Enemy/Object/Item's Speed From Bouncing Off A Trampoline With Wings
 | kill_3w_magnumkiller | String | Variable That Dictates If An Enemy/Object/Item Can Kill A Bansai Bill
 | model_res_name | String | Variable That Dictates An Enemy/Object/Item's Resource Pack
-| name | String | Variable That Dictates An Enemy/Object/Item's Name
+| name | String | Variable That Dictates An Enemy/Object/Item's Reference Name
 | onpublock_speed_normal | Single | Variable That Dictates An Enemy/Object/Item's Speed From Bouncing Off A Note/Music Block Without Wings
 | onpublock_speed_wing | Single | Variable That Dictates An Enemy/Object/Item's Speed From Bouncing Off A Note/Music Block Without Wings
 | press_pswitch | String | Variable That Dictates If An Enemy/Object/Item Can Press A P-Switch
