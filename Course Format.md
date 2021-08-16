@@ -235,55 +235,66 @@ Each entry has a size of 0x4 * the amount of sound effects.
 
 #### Sound Effect IDs
 
-| ID | Name                 |
-|----|----------------------|
-| 0  | Shock                |
-| 1  | Clatter              |
-| 2  | Kick                 |
-| 3  | Applause             |
-| 4  | Glory                |
-| 5  | Punch                |
-| 6  | Laughter             |
-| 7  | Baby                 |
-| 8  | Ding Dong            |
-| 9  | Boss Music           |
-| 10 | Heartbeat            |
-| 11 | Scream               |
-| 12 | Drama!               |
-| 13 | Jump                 |
-| 14 | Cheer                |
-| 15 | Doom                 |
-| 16 | Fireworks            |
-| 17 | Honk Honk            |
-| 18 | Bzzt!                |
-| 19 | Bonus Music          |
-| 20 | Silence              |
-| 23 | Party Popper         |
-| 24 | Booo!                |
-| 25 | Guffaw               |
-| 26 | Near Miss            |
-| 29 | Oink                 |
-| 30 | Kuh-thunk!           |
-| 31 | Beep!                |
-| 32 | Ninja Attack!        |
-| 35 | Zap!                 |
-| 36 | Flash                |
-| 37 | Yeah!                |
-| 38 | Aww...               |
-| 41 | Audience             |
-| 42 | Scatting             |
-| 43 | Spark                |
-| 44 | Traditional          |
-| 45 | Electric Guitar      |
-| 46 | Twisty Turny         |
-| 47 | Woozy                |
-| 48 | Final Boss           |
-| 49 | Peaceful             |
-| 50 | Horror               |
-| 51 | Super Mario Galaxy   |
-| 52 | Super Mario 64       |
-| 53 | Super Mario Sunshine |
-| 54 | Super Mario Kart     |
+| ID | Name                 | Category   |
+|----|----------------------|------------|
+| 0  | Shock                | Feelings   |
+| 1  | Clatter              | Stingers   |
+| 2  | Kick                 | Stingers   |
+| 3  | Applause             | Feelings   |
+| 4  | Glory                | Reactions  |
+| 5  | Punch                | Stingers   |
+| 6  | Laughter             | Feelings   |
+| 7  | Baby                 | Feelings   |
+| 8  | Ding Dong            | Reactions  |
+| 9  | Boss Music           | Music      |
+| 10 | Heartbeat            | Music      |
+| 11 | Scream               | Feelings   |
+| 12 | Drama!               | Stingers   |
+| 13 | Jump                 | Stingers   |
+| 14 | Cheer                | Feelings   |
+| 15 | Doom                 | Reactions  |
+| 16 | Fireworks            | Animations |
+| 17 | Honk Honk            | Stingers   |
+| 18 | Bzzt!                | Reactions  |
+| 19 | Bonus Music          | Music      |
+| 20 | Silence              | Music      |
+| 21 | Unknown              | Unknown    |
+| 22 | Unknown              | Unknown    |
+| 23 | Party Popper         | Feelings   |
+| 24 | Booo!                | Feelings   |
+| 25 | Guffaw               | Feelings   |
+| 26 | Near Miss            | Feelings   |
+| 27 | Unknown              | Unknown    |
+| 28 | Unknown              | Unknown    |
+| 29 | Oink                 | Stingers   |
+| 30 | Kuh-thunk!           | Stingers   |
+| 31 | Beep!                | Stingers   |
+| 32 | Ninja Attack         | Stingers   |
+| 33 | Unknown              | Unknown    |
+| 34 | Unknown              | Unknown    |
+| 35 | Zap!                 | Stingers   |
+| 36 | Flash                | Animations |
+| 37 | Yeah!                | Reactions  |
+| 38 | Aww...               | Reactions  |
+| 39 | Unknown              | Unknown    |
+| 40 | Unknown              | Unknown    |
+| 41 | Audience             | Animations |
+| 42 | Scatting             | Animations |
+| 43 | Spark                | Animations |
+| 44 | Traditional          | Animations |
+| 45 | Electric Guitar      | Animations |
+| 46 | Twisty Turny         | Animations |
+| 47 | Woozy                | Animations |
+| 48 | Final Boss           | Music      |
+| 49 | Peaceful             | Music      |
+| 50 | Horror               | Music      |
+| 51 | Super Mario Galaxy   | Music      |
+| 52 | Super Mario 64       | Music      |
+| 53 | Super Mario Sunshine | Music      |
+| 54 | Super Mario Kart     | Music      |
+| 55 | Unknown              | Unknown    |
+
+ID 21 appears to be the same as the Scatting (ID 42) sound effect, but without the visual effect.
 
 ### Snake Block Data
 
