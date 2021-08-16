@@ -2,53 +2,78 @@
 
 This is the structure of the course file, which has a size of 0x5BFC0.
 
-| Offset  | Size    | Description             |
-|---------|---------|-------------------------|
-| 0x0     | 0x200   | Course Header           |
-| 0x200   | 0x2DEE0 | Course Data (Main Area) |
-| 0x2E0E0 | 0x2DEE0 | Course Data (Sub Area)  |
+| Offset  | Size    | Description |
+|---------|---------|-------------|
+| 0x0     | 0x200   | Header      |
+| 0x200   | 0x2DEE0 | Main Area   |
+| 0x2E0E0 | 0x2DEE0 | Sub Area    |
 
 ## Course Header
 
 Starts at 0x0, with a size of 0x200.
 
-| Offset | Size | Description                                                             |
-|--------|------|-------------------------------------------------------------------------|
-| 0x0    | 0x1  | Start Y Position                                                        |
-| 0x1    | 0x1  | Goal Y Position                                                         |
-| 0x2    | 0x2  | Goal X Position                                                         |
-| 0x4    | 0x2  | Time Limit                                                              |
-| 0x6    | 0x2  | Clear Condition Amount                                                  |
-| 0x8    | 0x2  | Last Saved Year                                                         |
-| 0xA    | 0x1  | Last Saved Month                                                        |
-| 0xB    | 0x1  | Last Saved Day                                                          |
-| 0xC    | 0x1  | Last Saved Hour                                                         |
-| 0xD    | 0x1  | Last Saved Minute                                                       |
-| 0xE    | 0x1  | Custom Autoscroll Speed (0=x1, 1=x2, 2=x3)                              |
-| 0xF    | 0x1  | Clear Condition Category (1=Parts, 2=Status, 3=Actions)                 |
-| 0x10   | 0x4  | Clear Condition CRC32                                                   |
-| 0x14   | 0x4  | [Game Versions](#Game%20Version) create and edit bits. Multiple bits are set, if the course was created and/or edited in multiple versions. |
-| 0x18   | 0x4  | [Management Flags](#Management%20Flags)                                 |
-| 0x1C   | 0x4  | Number of Clear Check Tries                                             |
-| 0x20   | 0x4  | Clear Check Time                                                        |
-| 0x24   | 0x4  | Creation ID                                                             |
-| 0x28   | 0x8  | Upload ID                                                               |
-| 0x30   | 0x4  | [Game Version](#Game%20Version) uint in which course has been completed |
-| 0x34   | 0xBC | Padding                                                                 |
-| 0xF0   | 0x1  | Unknown, usually FF                                                     |
-| 0xF1   | 0x3  | Game Style (M1, M3, MW, WU, 3W)                                         |
-| 0xF4   | 0x42 | Course Name, 32 characters, null-terminated                             |
-| 0x136  | 0xCA | Course Description, 75 characters with space for 100, null-terminated   |
+| Offset | Size | Description                                                                                                                                |
+|--------|------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| 0x0    | 0x1  | Start Y Position                                                                                                                           |
+| 0x1    | 0x1  | Goal Y Position                                                                                                                            |
+| 0x2    | 0x2  | Goal X Position                                                                                                                            |
+| 0x4    | 0x2  | Time Limit                                                                                                                                 |
+| 0x6    | 0x2  | Clear Condition Amount                                                                                                                     |
+| 0x8    | 0x2  | Last Saved Year                                                                                                                            |
+| 0xA    | 0x1  | Last Saved Month                                                                                                                           |
+| 0xB    | 0x1  | Last Saved Day                                                                                                                             |
+| 0xC    | 0x1  | Last Saved Hour                                                                                                                            |
+| 0xD    | 0x1  | Last Saved Minute                                                                                                                          |
+| 0xE    | 0x1  | Custom Autoscroll Speed                                                                                                                    |
+| 0xF    | 0x1  | Clear Condition Category                                                                                                                   |
+| 0x10   | 0x4  | Clear Condition CRC32                                                                                                                      |
+| 0x14   | 0x4  | [Game Versions](#Game%20Version) create and edit bits. Multiple bits are set, if the course was created and/or edited in multiple versions |
+| 0x18   | 0x4  | [Management Flags](#Management%20Flags)                                                                                                    |
+| 0x1C   | 0x4  | Clear Check Attempts                                                                                                                       |
+| 0x20   | 0x4  | Clear Check Time                                                                                                                           |
+| 0x24   | 0x4  | Creation ID                                                                                                                                |
+| 0x28   | 0x8  | Upload ID                                                                                                                                  |
+| 0x30   | 0x4  | [Game Version](#Game%20Version) uint in which course has been completed                                                                    |
+| 0x34   | 0xBC | Reserved                                                                                                                                   |
+| 0xF0   | 0x1  | Unknown (Usually 0xFF)                                                                                                                     |
+| 0xF1   | 0x3  | Game Style (null-terminated)                                                                                                               |
+| 0xF4   | 0x42 | Name (32 characters, null-terminated)                                                                                                      |
+| 0x136  | 0xCA | Description (75 characters with space for 100, null-terminated)                                                                            |
+
+### Custom Autoscroll Speed
+
+| Value | Description |
+|-------|-------------|
+| 0     | x1          |
+| 1     | x2          |
+| 2     | x3          |
+
+### Clear Condition Category
+
+| Value | Description |
+|-------|-------------|
+| 0     | None        |
+| 1     | Parts       |
+| 2     | Status      |
+| 3     | Actions     |
+
+### Clear Condition CRC32
+
+| Value      | Description                           |
+|------------|---------------------------------------|
+| 0x1664515A | Reach the goal without taking damage. |
+| 0x4C8772A3 | Reach the goal on a Lakitu's Cloud.   |
 
 ### Game Version
 
-| Value | Version |
-|-------|---------|
-| 0     | 1.0.0   |
-| 1     | 1.0.1   |
-| 2     | 1.1.0   |
-| 3     | 2.0.0   |
-| 4     | 3.0.0   |
+| Value | Description |
+|-------|-------------|
+| 0     | 1.0.0       |
+| 1     | 1.0.1       |
+| 2     | 1.1.0       |
+| 3     | 2.0.0       |
+| 4     | 3.0.0       |
+| 5     | 3.0.1       |
 
 ### Management Flags
 
@@ -63,47 +88,120 @@ Starts at 0x0, with a size of 0x200.
 | 6   | Has chosen sub area orientation                        |
 | 7   | Unknown                                                |
 
-## Course Data
+If bit0 is not set in a course, then opening the Coursebot will show an error indicating that the course is corrupted.
 
-Each entry has a size of 0x48.
+### Game Style
 
-| Offset  | Size        | Description                                                                                                               |
-|---------|-------------|---------------------------------------------------------------------------------------------------------------------------|
-| 0x0     | 0x1         | Area Theme (0=Ground, 1=Underground, 2=Castle, 3=Airship, 4=Underwater, 5=Ghost House, 6=Snow, 7=Desert, 8=Sky, 9=Forest) |
-| 0x1     | 0x1         | Autoscroll Type (0=None, 1=Slow, 2=Normal, 3=Fast, 4=Custom)                                                              |
-| 0x2     | 0x1         | Screen Boundary Flags (0=Built Above Line, 1=Only Built Under Line)                                                       |
-| 0x3     | 0x1         | Area Orientation (0=Horizontal, 1=Vertical)                                                                               |
-| 0x4     | 0x1         | End Liquid Height                                                                                                         |
-| 0x5     | 0x1         | Liquid Mode (0=Static, 1=Rising/Falling Only, 2=Rising and Falling)                                                       |
-| 0x6     | 0x1         | Liquid Speed (1=x1, 2=x2, 3=x3)                                                                                           |
-| 0x7     | 0x1         | Start Liquid Height                                                                                                       |
-| 0x8     | 0x4         | Right Boundary                                                                                                            |
-| 0xC     | 0x4         | Top Boundary                                                                                                              |
-| 0x10    | 0x4         | Left Boundary                                                                                                             |
-| 0x14    | 0x4         | Bottom Boundary                                                                                                           |
-| 0x18    | 0x4         | Area Flags (bit0=Related to Screen Lock?, bit1=Night Time)                                                                |
-| 0x1C    | 0x4         | Object Count                                                                                                              |
-| 0x20    | 0x4         | Sound Effect Count                                                                                                        |
-| 0x24    | 0x4         | Snake Block Count                                                                                                         |
-| 0x28    | 0x4         | Clear Pipe Count                                                                                                          |
-| 0x2C    | 0x4         | Piranha Creeper Count                                                                                                     |
-| 0x30    | 0x4         | ! Block Count                                                                                                             |
-| 0x34    | 0x4         | Track Block Count                                                                                                         |
-| 0x38    | 0x4         | Padding                                                                                                                   |
-| 0x3C    | 0x4         | Tile Count                                                                                                                |
-| 0x40    | 0x4         | Track Count                                                                                                               |
-| 0x44    | 0x4         | Icicle Count                                                                                                              |
-| 0x48    | 0x20 * 2600 | Object Data                                                                                                               |
-| 0x14584 | 0x4 * 300   | Sound Effect Data                                                                                                         |
-| 0x149F8 | 0x3C4 * 5   | Snake Block Data                                                                                                          |
-| 0x15CCC | 0x124 * 200 | Clear Pipe Data                                                                                                           |
-| 0x240EC | 0x54 * 10   | Piranha Creeper Data                                                                                                      |
-| 0x24434 | 0x2C * 10   | ! Block Data                                                                                                              |
-| 0x245EC | 0x2C * 10   | Track Block Data                                                                                                          |
-| 0x247A4 | 0x4 * 4000  | Tile Data                                                                                                                 |
-| 0x28624 | 0xC * 1500  | Track Data                                                                                                                |
-| 0x2CC74 | 0x4 * 300   | Icicle Data                                                                                                               |
-| 0x2D124 | 0xDBC       | Padding                                                                                                                   |
+| Value | Description             |
+|-------|-------------------------|
+| "M1"  | Super Mario Bros.       |
+| "M3"  | Super Mario Bros. 3     |
+| "MW"  | Super Mario World       |
+| "WU"  | New Super Mario Bros. U |
+| "3W"  | Super Mario 3D World    |
+
+## Course Area
+
+| Offset  | Size                  | Description           |
+|---------|-----------------------|-----------------------|
+| 0x0     | 0x1                   | Theme                 |
+| 0x1     | 0x1                   | Autoscroll Type       |
+| 0x2     | 0x1                   | Boundary Flags        |
+| 0x3     | 0x1                   | Orientation           |
+| 0x4     | 0x1                   | End Liquid Height     |
+| 0x5     | 0x1                   | Liquid Mode           |
+| 0x6     | 0x1                   | Liquid Speed          |
+| 0x7     | 0x1                   | Start Liquid Height   |
+| 0x8     | 0x4                   | Right Boundary        |
+| 0xC     | 0x4                   | Top Boundary          |
+| 0x10    | 0x4                   | Left Boundary         |
+| 0x14    | 0x4                   | Bottom Boundary       |
+| 0x18    | 0x4                   | Area Flags            |
+| 0x1C    | 0x4                   | Object Count          |
+| 0x20    | 0x4                   | Sound Effect Count    |
+| 0x24    | 0x4                   | Snake Block Count     |
+| 0x28    | 0x4                   | Clear Pipe Count      |
+| 0x2C    | 0x4                   | Piranha Creeper Count |
+| 0x30    | 0x4                   | ! Block Count         |
+| 0x34    | 0x4                   | Track Block Count     |
+| 0x38    | 0x4                   | Reserved              |
+| 0x3C    | 0x4                   | Tile Count            |
+| 0x40    | 0x4                   | Track Count           |
+| 0x44    | 0x4                   | Icicle Count          |
+| 0x48    | 0x14500 (0x20 * 2600) | Object Data           |
+| 0x14584 | 0x4B0 (0x4 * 300)     | Sound Effect Data     |
+| 0x149F8 | 0x12D4 (0x3C4 * 5)    | Snake Block Data      |
+| 0x15CCC | 0xE420 (0x124 * 200)  | Clear Pipe Data       |
+| 0x240EC | 0x348 (0x54 * 10)     | Piranha Creeper Data  |
+| 0x24434 | 0x1B8 (0x2C * 10)     | ! Block Data          |
+| 0x245EC | 0x1B8 (0x2C * 10)     | Track Block Data      |
+| 0x247A4 | 0x3E80 (0x4 * 4000)   | Tile Data             |
+| 0x28624 | 0x4650 (0xC * 1500)   | Track Data            |
+| 0x2CC74 | 0x4B0 (0x4 * 300)     | Icicle Data           |
+| 0x2D124 | 0xDBC                 | Reserved              |
+
+### Theme
+
+| Value | Description |
+|-------|-------------|
+| 0     | Ground      |
+| 1     | Underground |
+| 2     | Castle      |
+| 3     | Airship     |
+| 4     | Underwater  |
+| 5     | Ghost House |
+| 6     | Snow        |
+| 7     | Desert      |
+| 8     | Sky         |
+| 9     | Forest      |
+
+### Autoscroll Type
+
+| Value | Description |
+|-------|-------------|
+| 0     | None        |
+| 1     | Slow        |
+| 2     | Normal      |
+| 3     | Fast        |
+| 4     | Custom      |
+
+### Boundary Flags
+
+| Value | Description      |
+|-------|------------------|
+| 0     | Built Above Line |
+| 1     | Built Under Line |
+
+### Orientation
+
+| Value | Description |
+|-------|-------------|
+| 0     | Horizontal  |
+| 1     | Vertical    |
+
+### Liquid Mode
+
+| Value | Description        |
+|-------|--------------------|
+| 0     | Static             |
+| 1     | Rising or Falling  |
+| 2     | Rising and Falling |
+
+### Liquid Speed
+
+| Value | Description |
+|-------|-------------|
+| 0     | None        |
+| 1     | x1          |
+| 2     | x2          |
+| 3     | x3          |
+
+### Area Flags
+
+| Bit   | Description                       |
+|-------|-----------------------------------|
+| 0     | Unknown (Related to Screen Lock?) |
+| 1     | Night Time                        |
 
 ### Object Data
 
@@ -116,11 +214,11 @@ Each entry has a size of 0x20 * the amount of objects.
 | 0x8    | 0x2  | Padding            |
 | 0xA    | 0x1  | Width              |
 | 0xB    | 0x1  | Height             |
-| 0xC    | 0x4  | Object Flags       |
-| 0x10   | 0x4  | Child Object Flags |
+| 0xC    | 0x4  | Flags              |
+| 0x10   | 0x4  | Child Flags        |
 | 0x14   | 0x4  | Extended Data      |
-| 0x18   | 0x2  | Object Type        |
-| 0x1A   | 0x2  | Child Object Type  |
+| 0x18   | 0x2  | ID                 |
+| 0x1A   | 0x2  | Child ID           |
 | 0x1C   | 0x2  | Link ID            |
 | 0x1E   | 0x2  | Sound Effect ID    |
 
@@ -130,7 +228,7 @@ Each entry has a size of 0x4 * the amount of sound effects.
 
 | Offset | Size | Description     |
 |--------|------|-----------------|
-| 0x0    | 0x1  | Sound Effect ID |
+| 0x0    | 0x1  | ID              |
 | 0x1    | 0x1  | X Position      |
 | 0x2    | 0x1  | Y Position      |
 | 0x3    | 0x1  | Padding         |
@@ -212,7 +310,7 @@ Each entry  has a size of 0x8 * the amount of snake block nodes.
 
 ### Clear Pipe Data
 
-Each entry has a size of 0x4 * the amount of clear pipes.
+Each entry has a size of 0x124 * the amount of clear pipes.
 
 | Offset | Size     | Description        |
 |--------|----------|--------------------|
