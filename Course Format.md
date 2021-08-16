@@ -17,7 +17,7 @@ Starts at 0x0, with a size of 0x200.
 | 0x0    | 0x1  | Start Y Position                                                                                                                           |
 | 0x1    | 0x1  | Goal Y Position                                                                                                                            |
 | 0x2    | 0x2  | Goal X Position                                                                                                                            |
-| 0x4    | 0x2  | Time Limit                                                                                                                                 |
+| 0x4    | 0x2  | Timer                                                                                                                                      |
 | 0x6    | 0x2  | Clear Condition Amount                                                                                                                     |
 | 0x8    | 0x2  | Last Saved Year                                                                                                                            |
 | 0xA    | 0x1  | Last Saved Month                                                                                                                           |
