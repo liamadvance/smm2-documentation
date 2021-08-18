@@ -110,7 +110,7 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 | 0x240EC | 0x348 (0x54 * 10)     | Piranha Creeper Data  |
 | 0x24434 | 0x1B8 (0x2C * 10)     | ! Block Data          |
 | 0x245EC | 0x1B8 (0x2C * 10)     | Track Block Data      |
-| 0x247A4 | 0x3E80 (0x4 * 4000)   | Tile Data             |
+| 0x247A4 | 0x3E80 (0x4 * 4000)   | Ground Data           |
 | 0x28624 | 0x4650 (0xC * 1500)   | Track Data            |
 | 0x2CC74 | 0x4B0 (0x4 * 300)     | Icicle Data           |
 | 0x2D124 | 0xDBC                 | Reserved              |
@@ -140,7 +140,7 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 | 0x30    | 0x4                   | ! Block Count         |
 | 0x34    | 0x4                   | Track Block Count     |
 | 0x38    | 0x4                   | Reserved              |
-| 0x3C    | 0x4                   | Tile Count            |
+| 0x3C    | 0x4                   | Ground Count          |
 | 0x40    | 0x4                   | Track Count           |
 | 0x44    | 0x4                   | Icicle Count          |
 
@@ -306,7 +306,7 @@ ID 21 appears to be the same as the Scatting (ID 42) sound effect, but without t
 | 0x3    | 0x1               | Reserved             |
 | 0x4    | 0x3C0 (0x8 * 120) | Snake Block Nodes    |
 
-#### Snake Block Nodes
+#### Snake Block Node
 
 | Offset | Size | Description              |
 |--------|------|--------------------------|
@@ -346,7 +346,7 @@ ID 21 appears to be the same as the Scatting (ID 42) sound effect, but without t
 | 0x3    | 0x1              | Reserved             |
 | 0x4    | 0x120 (0x8 * 36) | Clear Pipe Nodes     |
 
-#### Clear Pipe Nodes
+#### Clear Pipe Node
 
 | Offset | Size | Description          |
 |--------|------|----------------------|
@@ -393,7 +393,7 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 0x3    | 0x1             | Reserved                |
 | 0x4    | 0x50 (0x4 * 20) | Piranha Creeper Nodes   |
 
-#### Piranha Creeper Nodes
+#### Piranha Creeper Node
 
 | Offset | Size | Description        |
 |--------|------|--------------------|
@@ -432,7 +432,7 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 0x3    | 0x1             | Reserved             |
 | 0x4    | 0x28 (0x4 * 10) | ! Block Nodes        |
 
-#### ! Block Nodes
+#### ! Block Node
 
 | Offset | Size | Description          |
 |--------|------|----------------------|
@@ -471,7 +471,7 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 0x3    | 0x1             | Reserved             |
 | 0x4    | 0x28 (0x4 * 10) | Track Block Nodes    |
 
-#### Track Block Nodes
+#### Track Block Node
 
 | Offset | Size | Description          |
 |--------|------|----------------------|
@@ -500,7 +500,7 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 15    | Up to End     |
 | 16    | Down to End   |
 
-### Tile Data
+### Ground Data
 
 | Offset | Size | Description          |
 |--------|------|----------------------|
