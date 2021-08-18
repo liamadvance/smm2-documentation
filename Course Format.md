@@ -308,7 +308,7 @@ ID 21 appears to be the same as the Scatting (ID 42) sound effect, but without t
 |--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0x0    | 0x2  | Index                                                                                                                                                                                                                                   |
 | 0x2    | 0x2  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
-| 0x4    | 0x2  | Unknown (Always 100)                                                                                                                                                                                                                    |
+| 0x4    | 0x2  | Unknown (Always 0x100)                                                                                                                                                                                                                  |
 | 0x6    | 0x2  | Reserved                                                                                                                                                                                                                                |
 
 ### Clear Pipe Data
@@ -323,16 +323,16 @@ ID 21 appears to be the same as the Scatting (ID 42) sound effect, but without t
 
 #### Clear Pipe Nodes
 
-| Offset | Size | Description            |
-|--------|------|------------------------|
-| 0x0    | 0x1  | Unknown (Direction?)   |
-| 0x1    | 0x1  | Index                  |
-| 0x2    | 0x1  | X Position             |
-| 0x3    | 0x1  | Y Position             |
-| 0x4    | 0x1  | Width                  |
-| 0x5    | 0x1  | Height                 |
-| 0x6    | 0x1  | Unknown (Always 1)     |
-| 0x7    | 0x1  | Unknown (Seen 0/1/2/3) |
+| Offset | Size | Description                               |
+|--------|------|-------------------------------------------|
+| 0x0    | 0x1  | Unknown (Always 2 if only a single node)  |
+| 0x1    | 0x1  | Index                                     |
+| 0x2    | 0x1  | X Position                                |
+| 0x3    | 0x1  | Y Position                                |
+| 0x4    | 0x1  | Width                                     |
+| 0x5    | 0x1  | Height                                    |
+| 0x6    | 0x1  | Unknown (Always 1)                        |
+| 0x7    | 0x1  | Direction (0=Right, 1=Left, 2=Up, 3=Down) |
 
 ### Piranha Creeper Data
 
