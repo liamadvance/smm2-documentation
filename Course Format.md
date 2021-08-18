@@ -528,7 +528,7 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 0x3    | 0x1  | X Position                                                                                                                                      |
 | 0x4    | 0x1  | Y Position                                                                                                                                      |
 | 0x5    | 0x1  | Type                                                                                                                                            |
-| 0x6    | 0x2  | Index                                                                                                                                           |
+| 0x6    | 0x2  | Link ID                                                                                                                                         |
 | 0x8    | 0x2  | Unknown (Changes depending on the size of the track, usually + 10 if the track is not looped)                                                   |
 | 0xA    | 0x2  | Unknown (Always `04 01` if connected to a track, otherwise changes depending on the size of the track, usually + 10 if the track is not looped) |
 
