@@ -1,14 +1,12 @@
 # smm2-documentation
 
-Information about file formats and other data for Super Mario Maker 2.
+Information about file formats and other data found in the game Super Mario Maker 2.
 
 ## Useful Links
 
-- [smm2bcd](https://switchjs.github.io/smm2bcd/) by switchjsdev, which allows for viewing course information.
-- [Mario Maker 2 Level Repository](https://tinfoil.io/MarioMaker/) by blawar, which has a large amount of user created courses.
 - [smm2patcher](https://github.com/MarioPossamato/smm2patcher) by MarioPossamato, a SMM2 binary patcher.
-- [smm2bcd](https://github.com/MarioPossamato/smm2bcd) by MarioPossamato, which allows for viewing course information.
-- [SMMDB](https://smmdb.net/) by Tarnadas, another level repository with a larger focus on emulators.
+- [smm2bcd](https://github.com/MarioPossamato/smm2bcd) by MarioPossamato, a tool for viewing binary course data information.
+- [SMMDB](https://smmdb.net/) by Tarnadas, a course repository with a focus on emulators.
 
 ## Credits
 
