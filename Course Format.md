@@ -10,33 +10,33 @@ This is the structure of the course file, which has a size of 0x5BFC0.
 
 ## Course Header
 
-| Offset | Size | Description                                                                                                                               |
-|--------|------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x0    | 0x1  | Start Y Position                                                                                                                          |
-| 0x1    | 0x1  | Goal Y Position                                                                                                                           |
-| 0x2    | 0x2  | Goal X Position                                                                                                                           |
-| 0x4    | 0x2  | Timer                                                                                                                                     |
-| 0x6    | 0x2  | Clear Condition Amount                                                                                                                    |
-| 0x8    | 0x2  | Last Saved Year                                                                                                                           |
-| 0xA    | 0x1  | Last Saved Month                                                                                                                          |
-| 0xB    | 0x1  | Last Saved Day                                                                                                                            |
-| 0xC    | 0x1  | Last Saved Hour                                                                                                                           |
-| 0xD    | 0x1  | Last Saved Minute                                                                                                                         |
-| 0xE    | 0x1  | Custom Autoscroll Speed                                                                                                                   |
-| 0xF    | 0x1  | Clear Condition Category                                                                                                                  |
-| 0x10   | 0x4  | Clear Condition CRC32                                                                                                                     |
-| 0x14   | 0x4  | [Game Version](#Game%20Version) create and edit bits. Multiple bits are set, if the course was created and/or edited in multiple versions |
-| 0x18   | 0x4  | [Management Flags](#Management%20Flags)                                                                                                   |
-| 0x1C   | 0x4  | Clear Check Attempts                                                                                                                      |
-| 0x20   | 0x4  | Clear Check Time                                                                                                                          |
-| 0x24   | 0x4  | Creation ID                                                                                                                               |
-| 0x28   | 0x8  | Upload ID                                                                                                                                 |
-| 0x30   | 0x4  | [Clear Check Game Version](#Game%20Version)                                                                                               |
-| 0x34   | 0xBC | Reserved                                                                                                                                  |
-| 0xF0   | 0x1  | Unknown (Usually 0xFF)                                                                                                                    |
-| 0xF1   | 0x3  | Game Style (null-terminated)                                                                                                              |
-| 0xF4   | 0x42 | Name (32 characters, null-terminated)                                                                                                     |
-| 0x136  | 0xCA | Description (75 characters with space for 100, null-terminated)                                                                           |
+| Offset | Size | Description                                                     |
+|--------|------|-----------------------------------------------------------------|
+| 0x0    | 0x1  | Start Y Position                                                |
+| 0x1    | 0x1  | Goal Y Position                                                 |
+| 0x2    | 0x2  | Goal X Position                                                 |
+| 0x4    | 0x2  | Timer                                                           |
+| 0x6    | 0x2  | Clear Condition Amount                                          |
+| 0x8    | 0x2  | Last Saved Year                                                 |
+| 0xA    | 0x1  | Last Saved Month                                                |
+| 0xB    | 0x1  | Last Saved Day                                                  |
+| 0xC    | 0x1  | Last Saved Hour                                                 |
+| 0xD    | 0x1  | Last Saved Minute                                               |
+| 0xE    | 0x1  | Custom Autoscroll Speed                                         |
+| 0xF    | 0x1  | Clear Condition Category                                        |
+| 0x10   | 0x4  | Clear Condition CRC32                                           |
+| 0x14   | 0x4  | Game Version                                                    |
+| 0x18   | 0x4  | Management Flags                                                |
+| 0x1C   | 0x4  | Clear Check Attempts                                            |
+| 0x20   | 0x4  | Clear Check Time                                                |
+| 0x24   | 0x4  | Creation ID                                                     |
+| 0x28   | 0x8  | Upload ID                                                       |
+| 0x30   | 0x4  | Clear Check Game Version                                        |
+| 0x34   | 0xBC | Reserved                                                        |
+| 0xF0   | 0x1  | Unknown (Usually 0xFF)                                          |
+| 0xF1   | 0x3  | Game Style (null-terminated)                                    |
+| 0xF4   | 0x42 | Name (32 characters, null-terminated)                           |
+| 0x136  | 0xCA | Description (75 characters with space for 100, null-terminated) |
 
 ### Custom Autoscroll Speed
 
@@ -73,6 +73,17 @@ This is the structure of the course file, which has a size of 0x5BFC0.
 | 4     | 3.0.0       |
 | 5     | 3.0.1       |
 
+### Clear Check Game Version
+
+| Bit   | Description |
+|-------|-------------|
+| 0     | 1.0.0       |
+| 1     | 1.0.1       |
+| 2     | 1.1.0       |
+| 3     | 2.0.0       |
+| 4     | 3.0.0       |
+| 5     | 3.0.1       |
+
 ### Management Flags
 
 | Bit | Description                                            |
@@ -84,7 +95,7 @@ This is the structure of the course file, which has a size of 0x5BFC0.
 | 4   | Can't upload course                                    |
 | 5   | Has clear condition amount                             |
 | 6   | Has chosen sub area orientation                        |
-| 7   | Unknown                                                |
+| 7+  | Unknown                                                |
 
 If bit0 is not set in a course, then opening the Coursebot will show an error indicating that the course is corrupted.
 
@@ -100,20 +111,20 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 
 ## Course Area
 
-| Offset  | Size                  | Description           |
-|---------|-----------------------|-----------------------|
-| 0x0     | 0x48                  | Course Area Header    |
-| 0x48    | 0x14500 (0x20 * 2600) | Object Data           |
-| 0x14584 | 0x4B0 (0x4 * 300)     | Sound Effect Data     |
-| 0x149F8 | 0x12D4 (0x3C4 * 5)    | Snake Block Data      |
-| 0x15CCC | 0xE420 (0x124 * 200)  | Clear Pipe Data       |
-| 0x240EC | 0x348 (0x54 * 10)     | Piranha Creeper Data  |
-| 0x24434 | 0x1B8 (0x2C * 10)     | ! Block Data          |
-| 0x245EC | 0x1B8 (0x2C * 10)     | Track Block Data      |
-| 0x247A4 | 0x3E80 (0x4 * 4000)   | Ground Data           |
-| 0x28624 | 0x4650 (0xC * 1500)   | Track Data            |
-| 0x2CC74 | 0x4B0 (0x4 * 300)     | Icicle Data           |
-| 0x2D124 | 0xDBC                 | Reserved              |
+| Offset  | Size                  | Description        |
+|---------|-----------------------|--------------------|
+| 0x0     | 0x48                  | Course Area Header |
+| 0x48    | 0x14500 (0x20 * 2600) | Object             |
+| 0x14584 | 0x4B0 (0x4 * 300)     | Sound Effect       |
+| 0x149F8 | 0x12D4 (0x3C4 * 5)    | Snake Block        |
+| 0x15CCC | 0xE420 (0x124 * 200)  | Clear Pipe         |
+| 0x240EC | 0x348 (0x54 * 10)     | Piranha Creeper    |
+| 0x24434 | 0x1B8 (0x2C * 10)     | ! Block            |
+| 0x245EC | 0x1B8 (0x2C * 10)     | Track Block        |
+| 0x247A4 | 0x3E80 (0x4 * 4000)   | Ground             |
+| 0x28624 | 0x4650 (0xC * 1500)   | Track              |
+| 0x2CC74 | 0x4B0 (0x4 * 300)     | Icicle             |
+| 0x2D124 | 0xDBC                 | Reserved           |
 
 ### Course Area Header
 
@@ -131,7 +142,7 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 | 0xC     | 0x4                   | Top Boundary          |
 | 0x10    | 0x4                   | Left Boundary         |
 | 0x14    | 0x4                   | Bottom Boundary       |
-| 0x18    | 0x4                   | Area Flags            |
+| 0x18    | 0x4                   | Flags                 |
 | 0x1C    | 0x4                   | Object Count          |
 | 0x20    | 0x4                   | Sound Effect Count    |
 | 0x24    | 0x4                   | Snake Block Count     |
@@ -200,14 +211,15 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 | 2     | x2          |
 | 3     | x3          |
 
-#### Area Flags
+#### Flags
 
 | Bit   | Description                       |
 |-------|-----------------------------------|
 | 0     | Unknown (Related to Screen Lock?) |
 | 1     | Night Time                        |
+| 2+    | Unknown                           |
 
-### Object Data
+### Object
 
 | Offset | Size | Description        |
 |--------|------|--------------------|
@@ -224,7 +236,7 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 | 0x1C   | 0x2  | Link ID            |
 | 0x1E   | 0x2  | Sound Effect ID    |
 
-### Sound Effect Data
+### Sound Effect
 
 | Offset | Size | Description     |
 |--------|------|-----------------|
@@ -296,7 +308,7 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 
 ID 21 appears to be the same as the Scatting (ID 42) sound effect, but without the visual effect.
 
-### Snake Block Data
+### Snake Block
 
 | Offset | Size              | Description          |
 |--------|-------------------|----------------------|
@@ -336,7 +348,7 @@ ID 21 appears to be the same as the Scatting (ID 42) sound effect, but without t
 | 15    | Up to End     |
 | 16    | Down to End   |
 
-### Clear Pipe Data
+### Clear Pipe
 
 | Offset | Size             | Description          |
 |--------|------------------|----------------------|
@@ -383,7 +395,7 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 2     | Up          |
 | 3     | Down        |
 
-### Piranha Creeper Data
+### Piranha Creeper
 
 | Offset | Size            | Description             |
 |--------|-----------------|-------------------------|
@@ -422,7 +434,7 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 15    | Up to End     |
 | 16    | Down to End   |
 
-### ! Block Data
+### ! Block
 
 | Offset | Size            | Description          |
 |--------|-----------------|----------------------|
@@ -461,7 +473,7 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 15    | Up to End     |
 | 16    | Down to End   |
 
-### Track Block Data
+### Track Block
 
 | Offset | Size            | Description          |
 |--------|-----------------|----------------------|
@@ -500,16 +512,16 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 15    | Up to End     |
 | 16    | Down to End   |
 
-### Ground Data
+### Ground
 
 | Offset | Size | Description          |
 |--------|------|----------------------|
 | 0x0    | 0x1  | X Position           |
 | 0x1    | 0x1  | Y Position           |
-| 0x2    | 0x1  | Tile ID              |
+| 0x2    | 0x1  | ID                   |
 | 0x3    | 0x1  | Background Object ID |
 
-#### Background Object ID
+#### Background Object IDs
 
 | Value | Description |
 |-------|-------------|
@@ -519,7 +531,7 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 12    | 1x3         |
 | 16    | 3x1         |
 
-### Track Data
+### Track
 
 | Offset | Size | Description                                                                                                                                     |
 |--------|------|-------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -559,7 +571,7 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 | 14    | Vertical 4          |
 | 15    | Vertical 5          |
 
-### Icicle Data
+### Icicle
 
 | Offset | Size | Description |
 |--------|------|-------------|
