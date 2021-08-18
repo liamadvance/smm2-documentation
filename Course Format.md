@@ -2,15 +2,13 @@
 
 This is the structure of the course file, which has a size of 0x5BFC0.
 
-| Offset  | Size    | Description |
-|---------|---------|-------------|
-| 0x0     | 0x200   | Header      |
-| 0x200   | 0x2DEE0 | Main Area   |
-| 0x2E0E0 | 0x2DEE0 | Sub Area    |
+| Offset  | Size    | Description             |
+|---------|---------|-------------------------|
+| 0x0     | 0x200   | Course Header           |
+| 0x200   | 0x2DEE0 | Course Area (Main Area) |
+| 0x2E0E0 | 0x2DEE0 | Course Area (Sub Area)  |
 
 ## Course Header
-
-Starts at 0x0, with a size of 0x200.
 
 | Offset | Size | Description                                                                                                                                |
 |--------|------|--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -104,6 +102,23 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 
 | Offset  | Size                  | Description           |
 |---------|-----------------------|-----------------------|
+| 0x0     | 0x48                  | Course Area Header    |
+| 0x48    | 0x14500 (0x20 * 2600) | Object Data           |
+| 0x14584 | 0x4B0 (0x4 * 300)     | Sound Effect Data     |
+| 0x149F8 | 0x12D4 (0x3C4 * 5)    | Snake Block Data      |
+| 0x15CCC | 0xE420 (0x124 * 200)  | Clear Pipe Data       |
+| 0x240EC | 0x348 (0x54 * 10)     | Piranha Creeper Data  |
+| 0x24434 | 0x1B8 (0x2C * 10)     | ! Block Data          |
+| 0x245EC | 0x1B8 (0x2C * 10)     | Track Block Data      |
+| 0x247A4 | 0x3E80 (0x4 * 4000)   | Tile Data             |
+| 0x28624 | 0x4650 (0xC * 1500)   | Track Data            |
+| 0x2CC74 | 0x4B0 (0x4 * 300)     | Icicle Data           |
+| 0x2D124 | 0xDBC                 | Reserved              |
+
+### Course Area Header
+
+| Offset  | Size                  | Description           |
+|---------|-----------------------|-----------------------|
 | 0x0     | 0x1                   | Theme                 |
 | 0x1     | 0x1                   | Autoscroll Type       |
 | 0x2     | 0x1                   | Boundary Flags        |
@@ -128,19 +143,8 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 | 0x3C    | 0x4                   | Tile Count            |
 | 0x40    | 0x4                   | Track Count           |
 | 0x44    | 0x4                   | Icicle Count          |
-| 0x48    | 0x14500 (0x20 * 2600) | Object Data           |
-| 0x14584 | 0x4B0 (0x4 * 300)     | Sound Effect Data     |
-| 0x149F8 | 0x12D4 (0x3C4 * 5)    | Snake Block Data      |
-| 0x15CCC | 0xE420 (0x124 * 200)  | Clear Pipe Data       |
-| 0x240EC | 0x348 (0x54 * 10)     | Piranha Creeper Data  |
-| 0x24434 | 0x1B8 (0x2C * 10)     | ! Block Data          |
-| 0x245EC | 0x1B8 (0x2C * 10)     | Track Block Data      |
-| 0x247A4 | 0x3E80 (0x4 * 4000)   | Tile Data             |
-| 0x28624 | 0x4650 (0xC * 1500)   | Track Data            |
-| 0x2CC74 | 0x4B0 (0x4 * 300)     | Icicle Data           |
-| 0x2D124 | 0xDBC                 | Reserved              |
 
-### Theme
+#### Theme
 
 | Value | Description |
 |-------|-------------|
@@ -155,7 +159,7 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 | 8     | Sky         |
 | 9     | Forest      |
 
-### Autoscroll Type
+#### Autoscroll Type
 
 | Value | Description |
 |-------|-------------|
@@ -165,21 +169,21 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 | 3     | Fast        |
 | 4     | Custom      |
 
-### Boundary Flags
+#### Boundary Flags
 
 | Value | Description      |
 |-------|------------------|
 | 0     | Built Above Line |
 | 1     | Built Under Line |
 
-### Orientation
+#### Orientation
 
 | Value | Description |
 |-------|-------------|
 | 0     | Horizontal  |
 | 1     | Vertical    |
 
-### Liquid Mode
+#### Liquid Mode
 
 | Value | Description        |
 |-------|--------------------|
@@ -187,7 +191,7 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 | 1     | Rising or Falling  |
 | 2     | Rising and Falling |
 
-### Liquid Speed
+#### Liquid Speed
 
 | Value | Description |
 |-------|-------------|
@@ -196,7 +200,7 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 | 2     | x2          |
 | 3     | x3          |
 
-### Area Flags
+#### Area Flags
 
 | Bit   | Description                       |
 |-------|-----------------------------------|
@@ -294,129 +298,279 @@ ID 21 appears to be the same as the Scatting (ID 42) sound effect, but without t
 
 ### Snake Block Data
 
-| Offset | Size              | Description        |
-|--------|-------------------|--------------------|
-| 0x0    | 0x1               | Link ID            |
-| 0x1    | 0x2               | Node Count         |
-| 0x2    | 0x1               | Unknown (Always 1) |
-| 0x3    | 0x1               | Reserved           |
-| 0x4    | 0x3C0 (0x8 * 120) | Snake Block Nodes  |
+| Offset | Size              | Description          |
+|--------|-------------------|----------------------|
+| 0x0    | 0x1               | Index                |
+| 0x1    | 0x2               | Node Count           |
+| 0x2    | 0x1               | Unknown (Always `1`) |
+| 0x3    | 0x1               | Reserved             |
+| 0x4    | 0x3C0 (0x8 * 120) | Snake Block Nodes    |
 
 #### Snake Block Nodes
 
-| Offset | Size | Description                                                                                                                                                                                                                             |
-|--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x0    | 0x2  | Index                                                                                                                                                                                                                                   |
-| 0x2    | 0x2  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
-| 0x4    | 0x2  | Unknown (Always 0x100)                                                                                                                                                                                                                  |
-| 0x6    | 0x2  | Reserved                                                                                                                                                                                                                                |
+| Offset | Size | Description              |
+|--------|------|--------------------------|
+| 0x0    | 0x2  | Index                    |
+| 0x2    | 0x2  | Direction                |
+| 0x4    | 0x2  | Unknown (Always `0x100`) |
+| 0x6    | 0x2  | Reserved                 |
+
+##### Direction
+
+| Value | Description   |
+|-------|---------------|
+| 1     | Left          |
+| 2     | Right         |
+| 3     | Down          |
+| 4     | Up            |
+| 5     | Left to Down  |
+| 6     | Down to Left  |
+| 7     | Left to Up    |
+| 8     | Up to Left    |
+| 9     | Right to Down |
+| 10    | Down to Right |
+| 11    | Right to Up   |
+| 12    | Up to Right   |
+| 13    | Right to End  |
+| 14    | Left to End   |
+| 15    | Up to End     |
+| 16    | Down to End   |
 
 ### Clear Pipe Data
 
-| Offset | Size             | Description        |
-|--------|------------------|--------------------|
-| 0x0    | 0x1              | Link ID            |
-| 0x1    | 0x1              | Node Count         |
-| 0x2    | 0x1              | Unknown (Always 1) |
-| 0x3    | 0x1              | Reserved           |
-| 0x4    | 0x120 (0x8 * 36) | Clear Pipe Nodes   |
+| Offset | Size             | Description          |
+|--------|------------------|----------------------|
+| 0x0    | 0x1              | Index                |
+| 0x1    | 0x1              | Node Count           |
+| 0x2    | 0x1              | Unknown (Always `1`) |
+| 0x3    | 0x1              | Reserved             |
+| 0x4    | 0x120 (0x8 * 36) | Clear Pipe Nodes     |
 
 #### Clear Pipe Nodes
 
-| Offset | Size | Description                               |
-|--------|------|-------------------------------------------|
-| 0x0    | 0x1  | Unknown (Always 2 if only a single node)  |
-| 0x1    | 0x1  | Index                                     |
-| 0x2    | 0x1  | X Position                                |
-| 0x3    | 0x1  | Y Position                                |
-| 0x4    | 0x1  | Width                                     |
-| 0x5    | 0x1  | Height                                    |
-| 0x6    | 0x1  | Unknown (Always 1)                        |
-| 0x7    | 0x1  | Direction (0=Right, 1=Left, 2=Up, 3=Down) |
+| Offset | Size | Description          |
+|--------|------|----------------------|
+| 0x0    | 0x1  | Type                 |
+| 0x1    | 0x1  | Index                |
+| 0x2    | 0x1  | X Position           |
+| 0x3    | 0x1  | Y Position           |
+| 0x4    | 0x1  | Width                |
+| 0x5    | 0x1  | Height               |
+| 0x6    | 0x1  | Unknown (Always `1`) |
+| 0x7    | 0x1  | Direction            |
+
+##### Type
+
+| Value | Description                  |
+|-------|------------------------------|
+| 0     | Closed on opposite direction |
+| 1     | Closed on direction          |
+| 2     | Open                         |
+| 3+    | Unknown                      |
+
+Values 0 and 1 will cause a part of the clear pipe to become "closed", as seen in the below image.
+
+![image](https://user-images.githubusercontent.com/47696410/129957779-782842a6-62ec-4ea2-9053-5af2392ca070.png)
+
+With a basic 2x3 right direction clear pipe, setting the Type field to 3 will cause the course to corrupt.
+
+##### Direction
+
+| Value | Description |
+|-------|-------------|
+| 0     | Right       |
+| 1     | Left        |
+| 2     | Up          |
+| 3     | Down        |
 
 ### Piranha Creeper Data
 
-| Offset | Size            | Description           |
-|--------|-----------------|-----------------------|
-| 0x0    | 0x1             | Unknown (Always 1)    |
-| 0x1    | 0x1             | Link ID               |
-| 0x2    | 0x1             | Node Count            |
-| 0x3    | 0x1             | Reserved              |
-| 0x4    | 0x50 (0x4 * 20) | Piranha Creeper Nodes |
+| Offset | Size            | Description             |
+|--------|-----------------|-------------------------|
+| 0x0    | 0x1             | Unknown (Always `1`)    |
+| 0x1    | 0x1             | Index                   |
+| 0x2    | 0x1             | Node Count              |
+| 0x3    | 0x1             | Reserved                |
+| 0x4    | 0x50 (0x4 * 20) | Piranha Creeper Nodes   |
 
 #### Piranha Creeper Nodes
 
-| Offset | Size | Description                                                                                                                                                                                                                             |
-|--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x0    | 0x1  | Unknown (Always 1)                                                                                                                                                                                                                      |
-| 0x1    | 0x1  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
-| 0x2    | 0x2  | Reserved                                                                                                                                                                                                                                |
+| Offset | Size | Description        |
+|--------|------|--------------------|
+| 0x0    | 0x1  | Unknown (Always 1) |
+| 0x1    | 0x1  | Direction          |
+| 0x2    | 0x2  | Reserved           |
+
+##### Direction
+
+| Value | Description   |
+|-------|---------------|
+| 1     | Left          |
+| 2     | Right         |
+| 3     | Down          |
+| 4     | Up            |
+| 5     | Left to Down  |
+| 6     | Down to Left  |
+| 7     | Left to Up    |
+| 8     | Up to Left    |
+| 9     | Right to Down |
+| 10    | Down to Right |
+| 11    | Right to Up   |
+| 12    | Up to Right   |
+| 13    | Right to End  |
+| 14    | Left to End   |
+| 15    | Up to End     |
+| 16    | Down to End   |
 
 ### ! Block Data
 
-| Offset | Size            | Description        |
-|--------|-----------------|--------------------|
-| 0x0    | 0x1             | Unknown (Always 1) |
-| 0x1    | 0x1             | Link ID            |
-| 0x2    | 0x1             | Node Count         |
-| 0x3    | 0x1             | Reserved           |
-| 0x4    | 0x28 (0x4 * 10) | ! Block Nodes      |
+| Offset | Size            | Description          |
+|--------|-----------------|----------------------|
+| 0x0    | 0x1             | Unknown (Always `1`) |
+| 0x1    | 0x1             | Index                |
+| 0x2    | 0x1             | Node Count           |
+| 0x3    | 0x1             | Reserved             |
+| 0x4    | 0x28 (0x4 * 10) | ! Block Nodes        |
 
 #### ! Block Nodes
 
-| Offset | Size | Description                                                                                                                                                                                                                             |
-|--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x0    | 0x1  | Unknown (Always 1)                                                                                                                                                                                                                      |
-| 0x1    | 0x1  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
-| 0x2    | 0x2  | Reserved                                                                                                                                                                                                                                |
+| Offset | Size | Description          |
+|--------|------|----------------------|
+| 0x0    | 0x1  | Unknown (Always `1`) |
+| 0x1    | 0x1  | Direction            |
+| 0x2    | 0x2  | Reserved             |
+
+##### Direction
+
+| Value | Description   |
+|-------|---------------|
+| 1     | Left          |
+| 2     | Right         |
+| 3     | Down          |
+| 4     | Up            |
+| 5     | Left to Down  |
+| 6     | Down to Left  |
+| 7     | Left to Up    |
+| 8     | Up to Left    |
+| 9     | Right to Down |
+| 10    | Down to Right |
+| 11    | Right to Up   |
+| 12    | Up to Right   |
+| 13    | Right to End  |
+| 14    | Left to End   |
+| 15    | Up to End     |
+| 16    | Down to End   |
 
 ### Track Block Data
 
-| Offset | Size            | Description        |
-|--------|-----------------|--------------------|
-| 0x0    | 0x1             | Unknown (Always 1) |
-| 0x1    | 0x1             | Link ID            |
-| 0x2    | 0x1             | Node Count         |
-| 0x3    | 0x1             | Reserved           |
-| 0x4    | 0x28 (0x4 * 10) | Track Block Nodes  |
+| Offset | Size            | Description          |
+|--------|-----------------|----------------------|
+| 0x0    | 0x1             | Unknown (Always `1`) |
+| 0x1    | 0x1             | Index                |
+| 0x2    | 0x1             | Node Count           |
+| 0x3    | 0x1             | Reserved             |
+| 0x4    | 0x28 (0x4 * 10) | Track Block Nodes    |
 
 #### Track Block Nodes
 
-| Offset | Size | Description                                                                                                                                                                                                                             |
-|--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x0    | 0x1  | Unknown (Always 1)                                                                                                                                                                                                                      |
-| 0x1    | 0x1  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
-| 0x2    | 0x2  | Reserved                                                                                                                                                                                                                                |
+| Offset | Size | Description          |
+|--------|------|----------------------|
+| 0x0    | 0x1  | Unknown (Always `1`) |
+| 0x1    | 0x1  | Direction            |
+| 0x2    | 0x2  | Reserved             |
+
+##### Direction
+
+| Value | Description   |
+|-------|---------------|
+| 1     | Left          |
+| 2     | Right         |
+| 3     | Down          |
+| 4     | Up            |
+| 5     | Left to Down  |
+| 6     | Down to Left  |
+| 7     | Left to Up    |
+| 8     | Up to Left    |
+| 9     | Right to Down |
+| 10    | Down to Right |
+| 11    | Right to Up   |
+| 12    | Up to Right   |
+| 13    | Right to End  |
+| 14    | Left to End   |
+| 15    | Up to End     |
+| 16    | Down to End   |
 
 ### Tile Data
 
-Each entry has a size of 0x4 * the amount of tiles.
+| Offset | Size | Description          |
+|--------|------|----------------------|
+| 0x0    | 0x1  | X Position           |
+| 0x1    | 0x1  | Y Position           |
+| 0x2    | 0x1  | Tile ID              |
+| 0x3    | 0x1  | Background Object ID |
 
-| Offset | Size | Description                                                 |
-|--------|------|-------------------------------------------------------------|
-| 0x0    | 0x1  | X Position                                                  |
-| 0x1    | 0x1  | Y Position                                                  |
-| 0x2    | 0x1  | Tile ID                                                     |
-| 0x3    | 0x1  | Background Object ID (0=None, 4=1x1, 8=1x2, 12=1x3, 16=3x1) |
+#### Background Object ID
+
+| Value | Description |
+|-------|-------------|
+| 0     | None        |
+| 4     | 1x1         |
+| 8     | 1x2         |
+| 12    | 1x3         |
+| 16    | 3x1         |
 
 ### Track Data
 
-| Offset | Size | Description                                                                                                                                                                                                                                                                                                                                        |
-|--------|------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x0    | 0x2  | Unknown                                                                                                                                                                                                                                                                                                                                            |
-| 0x2    | 0x1  | Flags (1=Has Object)                                                                                                                                                                                                                                                                                                                               |
-| 0x3    | 0x1  | X Position                                                                                                                                                                                                                                                                                                                                         |
-| 0x4    | 0x1  | Y Position                                                                                                                                                                                                                                                                                                                                         |
-| 0x5    | 0x1  | Type (0=Horizontal, 1=Vertical, 2=Descending Diagonal, 3=Ascending Diagonal, 4=Bottom Left Curve, 5=Top Right Curve, 6=Top Left Curve, 7=Bottom Right Curve, 8=Horizontal 3rd Type, 9=Horizontal 1st Type, 10=Vertical 3rd Type, 11=Vertical 1st Type, 12=Horizontal 4th Type, 13=Horizontal 2nd Type, 14=Vertical 4th Type, 15=Vertical 2nd Type) |
-| 0x6    | 0x2  | Index                                                                                                                                                                                                                                                                                                                                              |
-| 0x8    | 0x2  | Unknown (Changes depending on the size of the track, usually + 10 if the track is not looped)                                                                                                                                                                                                                                                      |
-| 0xA    | 0x2  | Unknown (Always `04 01` if connected to a track, otherwise changes depending on the size of the track, usually + 10 if the track is not looped)                                                                                                                                                                                                    |
+| Offset | Size | Description                                                                                                                                     |
+|--------|------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| 0x0    | 0x2  | Unknown                                                                                                                                         |
+| 0x2    | 0x1  | Flags                                                                                                                                           |
+| 0x3    | 0x1  | X Position                                                                                                                                      |
+| 0x4    | 0x1  | Y Position                                                                                                                                      |
+| 0x5    | 0x1  | Type                                                                                                                                            |
+| 0x6    | 0x2  | Index                                                                                                                                           |
+| 0x8    | 0x2  | Unknown (Changes depending on the size of the track, usually + 10 if the track is not looped)                                                   |
+| 0xA    | 0x2  | Unknown (Always `04 01` if connected to a track, otherwise changes depending on the size of the track, usually + 10 if the track is not looped) |
+
+#### Flags
+
+| Value | Description |
+|-------|-------------|
+| 1     | Has Object  |
+
+#### Type
+
+| Value | Description         |
+|-------|---------------------|
+| 0     | Horizontal          |
+| 1     | Vertical            |
+| 2     | Descending Diagonal |
+| 3     | Ascending Diagonal  |
+| 4     | Bottom Left Curve   |
+| 5     | Top Right Curve     |
+| 6     | Top Left Curve      |
+| 7     | Bottom Right Curve  |
+| 8     | Horizontal 3        |
+| 9     | Horizontal 1        |
+| 10    | Vertical 3          |
+| 11    | Vertical 1          |
+| 12    | Horizontal 4        |
+| 13    | Horizontal 2        |
+| 14    | Vertical 4          |
+| 15    | Vertical 5          |
 
 ### Icicle Data
 
-| Offset | Size | Description               |
-|--------|------|---------------------------|
-| 0x0    | 0x1  | X Position                |
-| 0x1    | 0x1  | Y Position                |
-| 0x2    | 0x1  | Type (0=Falling, 1=Solid) |
-| 0x3    | 0x1  | Reserved                  |
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | X Position  |
+| 0x1    | 0x1  | Y Position  |
+| 0x2    | 0x1  | Type        |
+| 0x3    | 0x1  | Reserved    |
+
+#### Type
+
+| Value | Description |
+|-------|-------------|
+| 0     | Falling     |
+| 1     | Solid       |
