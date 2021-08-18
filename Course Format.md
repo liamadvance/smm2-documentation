@@ -10,33 +10,33 @@ This is the structure of the course file, which has a size of 0x5BFC0.
 
 ## Course Header
 
-| Offset | Size | Description                                                                                                                                |
-|--------|------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x0    | 0x1  | Start Y Position                                                                                                                           |
-| 0x1    | 0x1  | Goal Y Position                                                                                                                            |
-| 0x2    | 0x2  | Goal X Position                                                                                                                            |
-| 0x4    | 0x2  | Timer                                                                                                                                      |
-| 0x6    | 0x2  | Clear Condition Amount                                                                                                                     |
-| 0x8    | 0x2  | Last Saved Year                                                                                                                            |
-| 0xA    | 0x1  | Last Saved Month                                                                                                                           |
-| 0xB    | 0x1  | Last Saved Day                                                                                                                             |
-| 0xC    | 0x1  | Last Saved Hour                                                                                                                            |
-| 0xD    | 0x1  | Last Saved Minute                                                                                                                          |
-| 0xE    | 0x1  | Custom Autoscroll Speed                                                                                                                    |
-| 0xF    | 0x1  | Clear Condition Category                                                                                                                   |
-| 0x10   | 0x4  | Clear Condition CRC32                                                                                                                      |
-| 0x14   | 0x4  | [Game Versions](#Game%20Version) create and edit bits. Multiple bits are set, if the course was created and/or edited in multiple versions |
-| 0x18   | 0x4  | [Management Flags](#Management%20Flags)                                                                                                    |
-| 0x1C   | 0x4  | Clear Check Attempts                                                                                                                       |
-| 0x20   | 0x4  | Clear Check Time                                                                                                                           |
-| 0x24   | 0x4  | Creation ID                                                                                                                                |
-| 0x28   | 0x8  | Upload ID                                                                                                                                  |
-| 0x30   | 0x4  | [Game Version](#Game%20Version) uint in which course has been completed                                                                    |
-| 0x34   | 0xBC | Reserved                                                                                                                                   |
-| 0xF0   | 0x1  | Unknown (Usually 0xFF)                                                                                                                     |
-| 0xF1   | 0x3  | Game Style (null-terminated)                                                                                                               |
-| 0xF4   | 0x42 | Name (32 characters, null-terminated)                                                                                                      |
-| 0x136  | 0xCA | Description (75 characters with space for 100, null-terminated)                                                                            |
+| Offset | Size | Description                                                                                                                               |
+|--------|------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| 0x0    | 0x1  | Start Y Position                                                                                                                          |
+| 0x1    | 0x1  | Goal Y Position                                                                                                                           |
+| 0x2    | 0x2  | Goal X Position                                                                                                                           |
+| 0x4    | 0x2  | Timer                                                                                                                                     |
+| 0x6    | 0x2  | Clear Condition Amount                                                                                                                    |
+| 0x8    | 0x2  | Last Saved Year                                                                                                                           |
+| 0xA    | 0x1  | Last Saved Month                                                                                                                          |
+| 0xB    | 0x1  | Last Saved Day                                                                                                                            |
+| 0xC    | 0x1  | Last Saved Hour                                                                                                                           |
+| 0xD    | 0x1  | Last Saved Minute                                                                                                                         |
+| 0xE    | 0x1  | Custom Autoscroll Speed                                                                                                                   |
+| 0xF    | 0x1  | Clear Condition Category                                                                                                                  |
+| 0x10   | 0x4  | Clear Condition CRC32                                                                                                                     |
+| 0x14   | 0x4  | [Game Version](#Game%20Version) create and edit bits. Multiple bits are set, if the course was created and/or edited in multiple versions |
+| 0x18   | 0x4  | [Management Flags](#Management%20Flags)                                                                                                   |
+| 0x1C   | 0x4  | Clear Check Attempts                                                                                                                      |
+| 0x20   | 0x4  | Clear Check Time                                                                                                                          |
+| 0x24   | 0x4  | Creation ID                                                                                                                               |
+| 0x28   | 0x8  | Upload ID                                                                                                                                 |
+| 0x30   | 0x4  | [Clear Check Game Version](#Game%20Version)                                                                                               |
+| 0x34   | 0xBC | Reserved                                                                                                                                  |
+| 0xF0   | 0x1  | Unknown (Usually 0xFF)                                                                                                                    |
+| 0xF1   | 0x3  | Game Style (null-terminated)                                                                                                              |
+| 0xF4   | 0x42 | Name (32 characters, null-terminated)                                                                                                     |
+| 0x136  | 0xCA | Description (75 characters with space for 100, null-terminated)                                                                           |
 
 ### Custom Autoscroll Speed
 
