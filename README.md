@@ -11,6 +11,6 @@ Information about file formats and other data found in the game Super Mario Make
 ## Credits
 
 - simontime for his original course decryptor.
-- blawar for his work on MMLINX and the level repository.
+- blawar for his work on MMLINX and the course repository.
 - Treeki and switchjs for help with documenting course file format information.
 - Mario Possamato for documenting enemy/editor database format information.
