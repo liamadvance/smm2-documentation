@@ -205,13 +205,11 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 
 ### Object Data
 
-Each entry has a size of 0x20 * the amount of objects.
-
 | Offset | Size | Description        |
 |--------|------|--------------------|
 | 0x0    | 0x4  | X Position         |
 | 0x4    | 0x4  | Y Position         |
-| 0x8    | 0x2  | Padding            |
+| 0x8    | 0x2  | Reserved           |
 | 0xA    | 0x1  | Width              |
 | 0xB    | 0x1  | Height             |
 | 0xC    | 0x4  | Flags              |
@@ -224,14 +222,12 @@ Each entry has a size of 0x20 * the amount of objects.
 
 ### Sound Effect Data
 
-Each entry has a size of 0x4 * the amount of sound effects.
-
 | Offset | Size | Description     |
 |--------|------|-----------------|
 | 0x0    | 0x1  | ID              |
 | 0x1    | 0x1  | X Position      |
 | 0x2    | 0x1  | Y Position      |
-| 0x3    | 0x1  | Padding         |
+| 0x3    | 0x1  | Reserved        |
 
 #### Sound Effect IDs
 
@@ -298,138 +294,116 @@ ID 21 appears to be the same as the Scatting (ID 42) sound effect, but without t
 
 ### Snake Block Data
 
-Each entry has a size of 0x3C4 * the amount of snake blocks.
-
-| Offset | Size      | Description        |
-|--------|-----------|--------------------|
-| 0x0    | 0x1       | Link ID            |
-| 0x1    | 0x2       | Node Count         |
-| 0x2    | 0x1       | Unknown (Always 1) |
-| 0x3    | 0x1       | Padding            |
-| 0x4    | 0x8 * 120 | Snake Block Nodes  |
+| Offset | Size              | Description        |
+|--------|-------------------|--------------------|
+| 0x0    | 0x1               | Link ID            |
+| 0x1    | 0x2               | Node Count         |
+| 0x2    | 0x1               | Unknown (Always 1) |
+| 0x3    | 0x1               | Reserved           |
+| 0x4    | 0x3C0 (0x8 * 120) | Snake Block Nodes  |
 
 #### Snake Block Nodes
-
-Each entry  has a size of 0x8 * the amount of snake block nodes.
 
 | Offset | Size | Description                                                                                                                                                                                                                             |
 |--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0x0    | 0x2  | Index                                                                                                                                                                                                                                   |
 | 0x2    | 0x2  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
 | 0x4    | 0x2  | Unknown (Always 100)                                                                                                                                                                                                                    |
-| 0x6    | 0x2  | Padding                                                                                                                                                                                                                                 |
+| 0x6    | 0x2  | Reserved                                                                                                                                                                                                                                |
 
 ### Clear Pipe Data
 
-Each entry has a size of 0x124 * the amount of clear pipes.
-
-| Offset | Size     | Description        |
-|--------|----------|--------------------|
-| 0x0    | 0x1      | Link ID            |
-| 0x1    | 0x1      | Node Count         |
-| 0x2    | 0x1      | Unknown (Always 1) |
-| 0x3    | 0x1      | Padding            |
-| 0x4    | 0x8 * 36 | Clear Pipe Nodes   |
+| Offset | Size             | Description        |
+|--------|------------------|--------------------|
+| 0x0    | 0x1              | Link ID            |
+| 0x1    | 0x1              | Node Count         |
+| 0x2    | 0x1              | Unknown (Always 1) |
+| 0x3    | 0x1              | Reserved           |
+| 0x4    | 0x120 (0x8 * 36) | Clear Pipe Nodes   |
 
 #### Clear Pipe Nodes
 
-Each entry has a size of 0x8 * the amount of clear pipe nodes.
-
-| Offset | Size     | Description            |
-|--------|----------|------------------------|
-| 0x0    | 0x1      | Unknown (Direction?)   |
-| 0x1    | 0x1      | Index                  |
-| 0x2    | 0x1      | Unknown (Position?)    |
-| 0x3    | 0x1      | Unknown (Position?)    |
-| 0x4    | 0x1      | Unknown (Always 2)     |
-| 0x5    | 0x1      | Unknown                |
-| 0x6    | 0x1      | Unknown (Always 1)     |
-| 0x7    | 0x1      | Unknown (Seen 0/1/2/3) |
+| Offset | Size | Description            |
+|--------|------|------------------------|
+| 0x0    | 0x1  | Unknown (Direction?)   |
+| 0x1    | 0x1  | Index                  |
+| 0x2    | 0x1  | X Position             |
+| 0x3    | 0x1  | Y Position             |
+| 0x4    | 0x1  | Width                  |
+| 0x5    | 0x1  | Height                 |
+| 0x6    | 0x1  | Unknown (Always 1)     |
+| 0x7    | 0x1  | Unknown (Seen 0/1/2/3) |
 
 ### Piranha Creeper Data
 
-Each entry has a size of 0x54 * the amount of piranha creepers.
-
-| Offset | Size     | Description           |
-|--------|----------|-----------------------|
-| 0x0    | 0x1      | Unknown (Always 1)    |
-| 0x1    | 0x1      | Link ID               |
-| 0x2    | 0x1      | Node Count            |
-| 0x3    | 0x1      | Padding               |
-| 0x4    | 0x4 * 20 | Piranha Creeper Nodes |
+| Offset | Size            | Description           |
+|--------|-----------------|-----------------------|
+| 0x0    | 0x1             | Unknown (Always 1)    |
+| 0x1    | 0x1             | Link ID               |
+| 0x2    | 0x1             | Node Count            |
+| 0x3    | 0x1             | Reserved              |
+| 0x4    | 0x50 (0x4 * 20) | Piranha Creeper Nodes |
 
 #### Piranha Creeper Nodes
 
-Each entry has a size of 0x4 * the amount of piranha creeper nodes.
-
 | Offset | Size | Description                                                                                                                                                                                                                             |
 |--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0x0    | 0x1  | Unknown (Always 1)                                                                                                                                                                                                                      |
 | 0x1    | 0x1  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
-| 0x2    | 0x2  | Padding                                                                                                                                                                                                                                 |
+| 0x2    | 0x2  | Reserved                                                                                                                                                                                                                                |
 
 ### ! Block Data
 
-Each entry has a size of 0x2C * the amount of ! blocks.
-
-| Offset | Size     | Description        |
-|--------|----------|--------------------|
-| 0x0    | 0x1      | Unknown (Always 1) |
-| 0x1    | 0x1      | Link ID            |
-| 0x2    | 0x1      | Node Count         |
-| 0x3    | 0x1      | Padding            |
-| 0x4    | 0x4 * 10 | ! Block Nodes      |
+| Offset | Size            | Description        |
+|--------|-----------------|--------------------|
+| 0x0    | 0x1             | Unknown (Always 1) |
+| 0x1    | 0x1             | Link ID            |
+| 0x2    | 0x1             | Node Count         |
+| 0x3    | 0x1             | Reserved           |
+| 0x4    | 0x28 (0x4 * 10) | ! Block Nodes      |
 
 #### ! Block Nodes
 
-Each entry has a size of 0x4 * the amount of ! block nodes.
-
 | Offset | Size | Description                                                                                                                                                                                                                             |
 |--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0x0    | 0x1  | Unknown (Always 1)                                                                                                                                                                                                                      |
 | 0x1    | 0x1  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
-| 0x2    | 0x2  | Padding                                                                                                                                                                                                                                 |
+| 0x2    | 0x2  | Reserved                                                                                                                                                                                                                                |
 
 ### Track Block Data
 
-Each entry has a size of 0x2C * the amount of track blocks.‬
-
-| Offset | Size     | Description        |
-|--------|----------|--------------------|
-| 0x0    | 0x1      | Unknown (Always 1) |
-| 0x1    | 0x1      | Link ID            |
-| 0x2    | 0x1      | Node Count         |
-| 0x3    | 0x1      | Padding            |
-| 0x4    | 0x4 * 10 | Track Block Nodes  |
+| Offset | Size            | Description        |
+|--------|-----------------|--------------------|
+| 0x0    | 0x1             | Unknown (Always 1) |
+| 0x1    | 0x1             | Link ID            |
+| 0x2    | 0x1             | Node Count         |
+| 0x3    | 0x1             | Reserved           |
+| 0x4    | 0x28 (0x4 * 10) | Track Block Nodes  |
 
 #### Track Block Nodes
-
-Each entry has a size of 0x4 * the amount of track block nodes.
 
 | Offset | Size | Description                                                                                                                                                                                                                             |
 |--------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0x0    | 0x1  | Unknown (Always 1)                                                                                                                                                                                                                      |
 | 0x1    | 0x1  | Direction (1=Left, 2=Right, 3=Down, 4=Up, 5=Left to Down, 6=Down to Left, 7=Left to Up, 8=Up to Left, 9=Right to Down, 10=Down to Right, 11=Right to Up, 12=Up to Right, 13=Right to End, 14=Left to End, 15=Up to End, 16=Down to End) |
-| 0x2    | 0x2  | Padding                                                                                                                                                                                                                                 |
+| 0x2    | 0x2  | Reserved                                                                                                                                                                                                                                |
 
 ### Tile Data
 
 Each entry has a size of 0x4 * the amount of tiles.
 
-| Offset | Size | Description                                         |
-|--------|------|-----------------------------------------------------|
-| 0x0    | 0x1  | X Position                                          |
-| 0x1    | 0x1  | Y Position                                          |
-| 0x2    | 0x1  | Tile ID                                             |
-| 0x3    | 0x1  | Background Object ID (4=1x1, 8=1x2, 12=1x3, 16=3x1) |
+| Offset | Size | Description                                                 |
+|--------|------|-------------------------------------------------------------|
+| 0x0    | 0x1  | X Position                                                  |
+| 0x1    | 0x1  | Y Position                                                  |
+| 0x2    | 0x1  | Tile ID                                                     |
+| 0x3    | 0x1  | Background Object ID (0=None, 4=1x1, 8=1x2, 12=1x3, 16=3x1) |
 
 ### Track Data
 
-Each entry has a size of 0xC * the amount of tracks.
-
 | Offset | Size | Description                                                                                                                                                                                                                                                                                                                                        |
 |--------|------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x0    | 0x2  | Padding                                                                                                                                                                                                                                                                                                                                            |
+| 0x0    | 0x2  | Unknown                                                                                                                                                                                                                                                                                                                                            |
 | 0x2    | 0x1  | Flags (1=Has Object)                                                                                                                                                                                                                                                                                                                               |
 | 0x3    | 0x1  | X Position                                                                                                                                                                                                                                                                                                                                         |
 | 0x4    | 0x1  | Y Position                                                                                                                                                                                                                                                                                                                                         |
@@ -440,11 +414,9 @@ Each entry has a size of 0xC * the amount of tracks.
 
 ### Icicle Data
 
-Each entry has a size of 0x4 * the amount of icicles.
-
 | Offset | Size | Description               |
 |--------|------|---------------------------|
 | 0x0    | 0x1  | X Position                |
 | 0x1    | 0x1  | Y Position                |
 | 0x2    | 0x1  | Type (0=Falling, 1=Solid) |
-| 0x3    | 0x1  | Padding                   |
+| 0x3    | 0x1  | Reserved                  |
