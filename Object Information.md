@@ -3,13 +3,13 @@
 | ID  | Name                     | Category | Game Style                                                                                                   |
 |-----|--------------------------|----------|--------------------------------------------------------------------------------------------------------------|
 | 0   | Goomba                   | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / New Super Mario Bros. U / Super Mario 3D World                     |
+| 0   | Galoomba                 | Enemies  | Super Mario World                                                                                            |
 | 0   | Goombrat                 | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / New Super Mario Bros. U                                            |
 | 0   | Goombud                  | Enemies  | Super Mario World                                                                                            |
-| 0   | Galoomba                 | Enemies  | Super Mario World                                                                                            |
 | 1   | Koopa Troopa             | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 2   | Piranha Plant            | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / New Super Mario Bros. U / Super Mario 3D World                     |
-| 2   | Fire Piranha Plant       | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 2   | Jumping Piranha Plant    | Enemies  | Super Mario World                                                                                            |
+| 2   | Fire Piranha Plant       | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 3   | Hammer Bro               | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 3   | Fire Bro                 | Enemies  | Super Mario 3D World                                                                                         |
 | 4   | Block                    | Terrain  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
@@ -21,8 +21,8 @@
 | 9   | Pipe                     | Terrain  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 10  | Trampoline               | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 11  | Lift                     | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
-| 11  | Flimsy Lift              | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
 | 11  | Cloud Lift               | Gizmos   | Super Mario 3D World                                                                                         |
+| 11  | Flimsy Lift              | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
 | 12  | Thwomp                   | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 13  | Bill Blaster             | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 14  | Mushroom Platform        | Terrain  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
@@ -61,8 +61,8 @@
 | 41  | Boo Buddies              | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
 | 41  | Peepa                    | Enemies  | Super Mario 3D World                                                                                         |
 | 42  | Koopa Clown Car          | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World                                                  |
-| 42  | Fire Koopa Clown Car     | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World                                                  |
 | 42  | Junior Clown Car         | Enemies  | New Super Mario Bros. U                                                                                      |
+| 42  | Fire Koopa Clown Car     | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World                                                  |
 | 42  | Fire Junior Clown Car    | Enemies  | New Super Mario Bros. U                                                                                      |
 | 43  | Spike Trap               | Terrain  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
 | 44  | Big Mushroom             | Items    | Super Mario Bros.                                                                                            |
@@ -71,8 +71,8 @@
 | 44  | Propeller Mushroom       | Items    | New Super Mario Bros. U                                                                                      |
 | 44  | Super Bell               | Items    | Super Mario 3D World                                                                                         |
 | 45  | Shoe Goomba              | Items    | Super Mario Bros. / Super Mario Bros. 3                                                                      |
-| 45  | Stiletto Goomba          | Items    | Super Mario Bros. / Super Mario Bros. 3                                                                      |
 | 45  | Yoshi's Egg              | Items    | Super Mario World / New Super Mario Bros. U                                                                  |
+| 45  | Stiletto Goomba          | Items    | Super Mario Bros. / Super Mario Bros. 3                                                                      |
 | 46  | Dry Bones                | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 47  | Cannon                   | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
 | 48  | Blooper                  | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
