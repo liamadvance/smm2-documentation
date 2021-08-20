@@ -19,7 +19,7 @@
 | 8   | Coin                     | Items    | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 8   | Frozen Coin              | Items    | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
 | 9   | Pipe                     | Terrain  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
-| 10  | Trampoline               | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
+| 10  | Trampoline               | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 11  | Lift                     | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
 | 11  | Cloud Lift               | Gizmos   | Super Mario 3D World                                                                                         |
 | 11  | Flimsy Lift              | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
