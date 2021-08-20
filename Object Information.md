@@ -92,7 +92,7 @@
 | 56  | Cheep Cheep              | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 57  | Muncher                  | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
 | 58  | Rocky Wrench             | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
-| 59  | Track                    | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
+| 59  | Track                    | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
 | 60  | Lava Bubble              | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 61  | Chain Chomp              | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
 | 61  | Unchained Chomp          | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U                        |
@@ -113,6 +113,7 @@
 | 73  | Toad                     | None     | Unknown                                                                                                      |
 | 74  | Spike                    | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 74  | Spike Ball               | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
+| 74  | Snowball                 | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 75  | Stone                    | None     | Unknown                                                                                                      |
 | 76  | Twister                  | Gizmos   | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
 | 77  | Boom Boom                | Enemies  | Super Mario Bros. / Super Mario Bros. 3 / Super Mario World / New Super Mario Bros. U / Super Mario 3D World |
