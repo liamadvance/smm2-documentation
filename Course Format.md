@@ -33,7 +33,7 @@ This is the structure of the course file, which has a size of 0x5BFC0.
 | 0x28   | 0x8  | Upload ID                                                       |
 | 0x30   | 0x4  | Clear Check Game Version                                        |
 | 0x34   | 0xBC | Reserved                                                        |
-| 0xF0   | 0x1  | Unknown (Usually 0xFF)                                          |
+| 0xF0   | 0x1  | Unknown (Usually `0xFF`)                                        |
 | 0xF1   | 0x3  | Game Style (null-terminated)                                    |
 | 0xF4   | 0x42 | Name (32 characters, null-terminated)                           |
 | 0x136  | 0xCA | Description (75 characters with space for 100, null-terminated) |
@@ -64,18 +64,18 @@ This is the structure of the course file, which has a size of 0x5BFC0.
 
 ### Game Version
 
-| Value | Description |
-|-------|-------------|
-| 0     | 1.0.0       |
-| 1     | 1.0.1       |
-| 2     | 1.1.0       |
-| 3     | 2.0.0       |
-| 4     | 3.0.0       |
-| 5     | 3.0.1       |
+| Bit | Description |
+|-----|-------------|
+| 0   | 1.0.0       |
+| 1   | 1.0.1       |
+| 2   | 1.1.0       |
+| 3   | 2.0.0       |
+| 4   | 3.0.0       |
+| 5   | 3.0.1       |
 
 ### Clear Check Game Version
 
-| Bit   | Description |
+| Value | Description |
 |-------|-------------|
 | 0     | 1.0.0       |
 | 1     | 1.0.1       |
@@ -128,32 +128,32 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 
 ### Course Area Header
 
-| Offset  | Size                  | Description           |
-|---------|-----------------------|-----------------------|
-| 0x0     | 0x1                   | Theme                 |
-| 0x1     | 0x1                   | Autoscroll Type       |
-| 0x2     | 0x1                   | Boundary Flags        |
-| 0x3     | 0x1                   | Orientation           |
-| 0x4     | 0x1                   | End Liquid Height     |
-| 0x5     | 0x1                   | Liquid Mode           |
-| 0x6     | 0x1                   | Liquid Speed          |
-| 0x7     | 0x1                   | Start Liquid Height   |
-| 0x8     | 0x4                   | Right Boundary        |
-| 0xC     | 0x4                   | Top Boundary          |
-| 0x10    | 0x4                   | Left Boundary         |
-| 0x14    | 0x4                   | Bottom Boundary       |
-| 0x18    | 0x4                   | Flags                 |
-| 0x1C    | 0x4                   | Object Count          |
-| 0x20    | 0x4                   | Sound Effect Count    |
-| 0x24    | 0x4                   | Snake Block Count     |
-| 0x28    | 0x4                   | Clear Pipe Count      |
-| 0x2C    | 0x4                   | Piranha Creeper Count |
-| 0x30    | 0x4                   | ! Block Count         |
-| 0x34    | 0x4                   | Track Block Count     |
-| 0x38    | 0x4                   | Reserved              |
-| 0x3C    | 0x4                   | Ground Count          |
-| 0x40    | 0x4                   | Track Count           |
-| 0x44    | 0x4                   | Icicle Count          |
+| Offset | Size | Description           |
+|--------|------|-----------------------|
+| 0x0    | 0x1  | Theme                 |
+| 0x1    | 0x1  | Autoscroll Type       |
+| 0x2    | 0x1  | Boundary Flags        |
+| 0x3    | 0x1  | Orientation           |
+| 0x4    | 0x1  | End Liquid Height     |
+| 0x5    | 0x1  | Liquid Mode           |
+| 0x6    | 0x1  | Liquid Speed          |
+| 0x7    | 0x1  | Start Liquid Height   |
+| 0x8    | 0x4  | Right Boundary        |
+| 0xC    | 0x4  | Top Boundary          |
+| 0x10   | 0x4  | Left Boundary         |
+| 0x14   | 0x4  | Bottom Boundary       |
+| 0x18   | 0x4  | Flags                 |
+| 0x1C   | 0x4  | Object Count          |
+| 0x20   | 0x4  | Sound Effect Count    |
+| 0x24   | 0x4  | Snake Block Count     |
+| 0x28   | 0x4  | Clear Pipe Count      |
+| 0x2C   | 0x4  | Piranha Creeper Count |
+| 0x30   | 0x4  | ! Block Count         |
+| 0x34   | 0x4  | Track Block Count     |
+| 0x38   | 0x4  | Reserved              |
+| 0x3C   | 0x4  | Ground Count          |
+| 0x40   | 0x4  | Track Count           |
+| 0x44   | 0x4  | Icicle Count          |
 
 #### Theme
 
@@ -213,37 +213,37 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 
 #### Flags
 
-| Bit   | Description                       |
-|-------|-----------------------------------|
-| 0     | Unknown (Related to Screen Lock?) |
-| 1     | Night Time                        |
-| 2+    | Unknown                           |
+| Bit | Description |
+|-----|-------------|
+| 0   | Unknown     |
+| 1   | Night Time  |
+| 2+  | Unknown     |
 
 ### Object
 
-| Offset | Size | Description        |
-|--------|------|--------------------|
-| 0x0    | 0x4  | X Position         |
-| 0x4    | 0x4  | Y Position         |
-| 0x8    | 0x2  | Reserved           |
-| 0xA    | 0x1  | Width              |
-| 0xB    | 0x1  | Height             |
-| 0xC    | 0x4  | Flags              |
-| 0x10   | 0x4  | Child Flags        |
-| 0x14   | 0x4  | Extended Data      |
-| 0x18   | 0x2  | ID                 |
-| 0x1A   | 0x2  | Child ID           |
-| 0x1C   | 0x2  | Link ID            |
-| 0x1E   | 0x2  | Sound Effect ID    |
+| Offset | Size | Description     |
+|--------|------|-----------------|
+| 0x0    | 0x4  | X Position      |
+| 0x4    | 0x4  | Y Position      |
+| 0x8    | 0x2  | Reserved        |
+| 0xA    | 0x1  | Width           |
+| 0xB    | 0x1  | Height          |
+| 0xC    | 0x4  | Flags           |
+| 0x10   | 0x4  | Child Flags     |
+| 0x14   | 0x4  | Extended Data   |
+| 0x18   | 0x2  | ID              |
+| 0x1A   | 0x2  | Child ID        |
+| 0x1C   | 0x2  | Link ID         |
+| 0x1E   | 0x2  | Sound Effect ID |
 
 ### Sound Effect
 
-| Offset | Size | Description     |
-|--------|------|-----------------|
-| 0x0    | 0x1  | ID              |
-| 0x1    | 0x1  | X Position      |
-| 0x2    | 0x1  | Y Position      |
-| 0x3    | 0x1  | Reserved        |
+| Offset | Size | Description |
+|--------|------|-------------|
+| 0x0    | 0x1  | ID          |
+| 0x1    | 0x1  | X Position  |
+| 0x2    | 0x1  | Y Position  |
+| 0x3    | 0x1  | Reserved    |
 
 #### Sound Effect IDs
 
@@ -397,21 +397,21 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 
 ### Piranha Creeper
 
-| Offset | Size            | Description             |
-|--------|-----------------|-------------------------|
-| 0x0    | 0x1             | Unknown (Always `1`)    |
-| 0x1    | 0x1             | Index                   |
-| 0x2    | 0x1             | Node Count              |
-| 0x3    | 0x1             | Reserved                |
-| 0x4    | 0x50 (0x4 * 20) | Piranha Creeper Nodes   |
+| Offset | Size            | Description           |
+|--------|-----------------|-----------------------|
+| 0x0    | 0x1             | Unknown (Always `1`)  |
+| 0x1    | 0x1             | Index                 |
+| 0x2    | 0x1             | Node Count            |
+| 0x3    | 0x1             | Reserved              |
+| 0x4    | 0x50 (0x4 * 20) | Piranha Creeper Nodes |
 
 #### Piranha Creeper Node
 
-| Offset | Size | Description        |
-|--------|------|--------------------|
-| 0x0    | 0x1  | Unknown (Always 1) |
-| 0x1    | 0x1  | Direction          |
-| 0x2    | 0x2  | Reserved           |
+| Offset | Size | Description          |
+|--------|------|----------------------|
+| 0x0    | 0x1  | Unknown (Always `1`) |
+| 0x1    | 0x1  | Direction            |
+| 0x2    | 0x2  | Reserved             |
 
 ##### Direction
 
@@ -514,22 +514,12 @@ With a basic 2x3 right direction clear pipe, setting the Type field to 3 will ca
 
 ### Ground
 
-| Offset | Size | Description          |
-|--------|------|----------------------|
-| 0x0    | 0x1  | X Position           |
-| 0x1    | 0x1  | Y Position           |
-| 0x2    | 0x1  | ID                   |
-| 0x3    | 0x1  | Background Object ID |
-
-#### Background Object IDs
-
-| Value | Description |
-|-------|-------------|
-| 0     | None        |
-| 4     | 1x1         |
-| 8     | 1x2         |
-| 12    | 1x3         |
-| 16    | 3x1         |
+| Offset | Size | Description   |
+|--------|------|---------------|
+| 0x0    | 0x1  | X Position    |
+| 0x1    | 0x1  | Y Position    |
+| 0x2    | 0x1  | ID            |
+| 0x3    | 0x1  | Background ID |
 
 ### Track
 
