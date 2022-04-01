@@ -4,8 +4,8 @@ Information about file formats and other data found in the game Super Mario Make
 
 ## Useful Links
 
-- [smm2patcher](https://github.com/MarioPossamato/smm2patcher) by MarioPossamato, a SMM2 binary patcher.
-- [smm2bcd](https://github.com/MarioPossamato/smm2bcd) by MarioPossamato, a tool for viewing binary course data information.
+- [SMM2Patcher](https://github.com/MarioPossamato/SMM2Patcher) by MarioPossamato, a SMM2 binary patcher.
+- [SMM2BCD](https://github.com/MarioPossamato/SMM2BCD) by MarioPossamato, a tool for viewing binary course data information.
 - [SMMDB](https://smmdb.net/) by Tarnadas, a course repository with a focus on emulators.
 
 ## Credits
