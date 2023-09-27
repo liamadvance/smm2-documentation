@@ -157,18 +157,25 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 
 #### Theme
 
-| Value | Description |
-|-------|-------------|
-| 0     | Ground      |
-| 1     | Underground |
-| 2     | Castle      |
-| 3     | Airship     |
-| 4     | Underwater  |
-| 5     | Ghost House |
-| 6     | Snow        |
-| 7     | Desert      |
-| 8     | Sky         |
-| 9     | Forest      |
+| Value | Description   |
+|-------|---------------|
+| 0     | Ground        |
+| 1     | Underground   |
+| 2     | Castle        |
+| 3     | Airship       |
+| 4     | Underwater    |
+| 5     | Ghost House   |
+| 6     | Snow          |
+| 7     | Desert        |
+| 8     | Sky           |
+| 9     | Forest        |
+| A     | Ground*       |
+| B     | Underground*  |
+| C     | Castle*       |
+| D     | Airship*      |
+| E     | Underwater*   |
+| F     | Ghost House*  |
+Values A-F Seem to be glitched night themes with no attributes (eg. just normal theme, full stop)
 
 #### Autoscroll Type
 
