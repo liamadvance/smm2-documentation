@@ -115,7 +115,7 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 |---------|-----------------------|--------------------|
 | 0x0     | 0x48                  | Course Area Header |
 | 0x48    | 0x14500 (0x20 * 2600) | Object             |
-| 0x14584 | 0x4B0 (0x4 * 300)     | Sound Effect       |
+| 0x14548 | 0x4B0 (0x4 * 300)     | Sound Effect       |
 | 0x149F8 | 0x12D4 (0x3C4 * 5)    | Snake Block        |
 | 0x15CCC | 0xE420 (0x124 * 200)  | Clear Pipe         |
 | 0x240EC | 0x348 (0x54 * 10)     | Piranha Creeper    |
