@@ -33,7 +33,7 @@ This is the structure of the course file, which has a size of 0x5BFC0.
 | 0x28   | 0x8  | Upload ID                                                       |
 | 0x30   | 0x4  | Clear Check Game Version                                        |
 | 0x34   | 0xBC | Reserved                                                        |
-| 0xF0   | 0x1  | Unknown (Usually `0xFF`)                                        |
+| 0xF0   | 0x1  | Sound Effect ID on Mario                                        |
 | 0xF1   | 0x3  | Game Style (null-terminated)                                    |
 | 0xF4   | 0x42 | Name (32 characters, null-terminated)                           |
 | 0x136  | 0xCA | Description (75 characters with space for 100, null-terminated) |
