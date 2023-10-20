@@ -33,7 +33,7 @@ This is the structure of the course file, which has a size of 0x5BFC0.
 | 0x28   | 0x8  | Upload ID                                                       |
 | 0x30   | 0x4  | Clear Check Game Version                                        |
 | 0x34   | 0xBC | Reserved                                                        |
-| 0xF0   | 0x1  | Unknown (Usually `0xFF`)                                        |
+| 0xF0   | 0x1  | Sound Effect ID on Mario                                        |
 | 0xF1   | 0x3  | Game Style (null-terminated)                                    |
 | 0xF4   | 0x42 | Name (32 characters, null-terminated)                           |
 | 0x136  | 0xCA | Description (75 characters with space for 100, null-terminated) |
@@ -115,7 +115,7 @@ If bit0 is not set in a course, then opening the Coursebot will show an error in
 |---------|-----------------------|--------------------|
 | 0x0     | 0x48                  | Course Area Header |
 | 0x48    | 0x14500 (0x20 * 2600) | Object             |
-| 0x14584 | 0x4B0 (0x4 * 300)     | Sound Effect       |
+| 0x14548 | 0x4B0 (0x4 * 300)     | Sound Effect       |
 | 0x149F8 | 0x12D4 (0x3C4 * 5)    | Snake Block        |
 | 0x15CCC | 0xE420 (0x124 * 200)  | Clear Pipe         |
 | 0x240EC | 0x348 (0x54 * 10)     | Piranha Creeper    |
